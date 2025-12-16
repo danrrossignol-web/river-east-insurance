@@ -405,14 +405,14 @@ footer::before {
     font-size: 0.95rem;
 }
 
-/* Carrier Grid (Placeholder) */
+/* Carrier Grid */
 .carrier-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 30px;
-    opacity: 0.6;
+    /* REMOVED: opacity: 0.6; */
 }
 
 .carrier-box {

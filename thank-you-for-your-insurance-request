@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - River East Insurance</title>
+    
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        /* Simple internal styles just for this page */
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; color: #333; }
+        .thank-you-container {
+            max-width: 600px;
+            margin: 100px auto;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        h1 { color: #001f3f; font-size: 2.5rem; margin-bottom: 20px; }
+        p { font-size: 1.2rem; margin-bottom: 40px; }
+        .btn {
+            background-color: #fca311;
+            color: #001f3f;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+        .btn:hover { background-color: #e09200; }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <img src="../images/logo.png" alt="River East Insurance" style="max-width: 250px; margin-bottom: 30px;">
+        
+        <h1>Request Received!</h1>
+        <p>Thank you for trusting River East Insurance. We are reviewing your information and will be in touch shortly to discuss your quote.</p>
+        
+        <a href="/" class="btn">Return to Home</a>
+    </div>
+
+</body>
+</html>

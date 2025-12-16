@@ -710,12 +710,18 @@ footer::before {
 }
 
 .big-phone-link {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-blue);
-    margin-bottom: 5px;
+    display: block;         /* Forces it to sit on its own line */
+    font-size: 2.5rem;      /* INCREASED from 1.5rem to 2.5rem */
+    font-weight: 800;       /* Extra Bold */
+    color: #001f3f;         /* Dark Blue */
+    margin: 15px 0;         /* Adds space above and below */
     text-decoration: none;
+    line-height: 1.2;
+}
+
+.big-phone-link:hover {
+    color: #fca311;         /* Turns Gold when you hover over it */
+    text-decoration: underline;
 }
 
 .email-link {

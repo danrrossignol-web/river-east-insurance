@@ -659,3 +659,81 @@ footer::before {
         max-width: 100%;
     }
 }
+
+/* --- Contact Page Styling --- */
+
+.contact-cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    text-align: center;
+    border-top: 4px solid #eee;
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Highlight the "Talk to Agent" card */
+.highlight-card {
+    border-top: 4px solid #fca311; /* Gold */
+    background: #fffcf5; /* Very light gold tint */
+}
+
+.icon-header {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-blue);
+}
+
+.contact-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.big-phone-link {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.email-link {
+    color: #555;
+    text-decoration: underline;
+}
+
+.hours-box {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.text-link {
+    color: var(--primary-blue);
+    font-weight: bold;
+    text-decoration: underline;
+}

@@ -291,7 +291,7 @@ footer::before {
     /* Internal Padding (Space inside the blue box) */
     padding: 80px 0; 
 
-    /* External Margins (Creates the White space above and below) */
+    /* External Margins */
     margin-top: 60px;
     margin-bottom: 60px;
     
@@ -302,7 +302,7 @@ footer::before {
     position: relative;
     z-index: 2;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the content on the screen */
+    margin: 0 auto; 
     display: flex; /* Creates the two-column layout */
     flex-wrap: wrap;
     gap: 40px;
@@ -353,28 +353,37 @@ footer::before {
 }
 
 /* Right Side: Form */
-/* This ensures the form aligns correctly on mobile and desktop */
 #JotFormIFrame-253484024523049 {
     flex: 1;
     min-width: 350px;
-    /* Note: If the form itself is white, that is controlled by JotForm settings, not CSS */
+    /* Ensure height is recognized on desktop */
+    height: 1200px; 
 }
 
 /* Responsive adjustments for Mobile */
 @media (max-width: 768px) {
     .quote-container {
         flex-direction: column;
+        align-items: stretch; /* Ensures full width */
     }
     
     .quote-content {
         text-align: center;
         margin-bottom: 30px;
+        min-width: auto; /* Allow text to shrink if phone is very narrow */
     }
 
     #JotFormIFrame-253484024523049 {
         margin: 0 auto;
         display: block;
-        min-width: 100% !important;
+        
+        /* FIX: Override the 350px inline style so it fits small phones */
+        min-width: 100% !important; 
+        max-width: 100% !important;
+        
+        /* CRITICAL FIX: Disable flex sizing so the height doesn't collapse to 0 */
+        flex: none !important; 
+        height: 1200px !important;
     }
 }
 

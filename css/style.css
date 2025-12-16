@@ -221,14 +221,94 @@ footer::before {
 
 .quote-section {
     position: relative;
-    background-color: #001f3f; 
+    background-color: #001f3f; /* Solid Dark Blue */
     
     /* Internal Padding (Space inside the blue box) */
     padding: 80px 0; 
 
-    /* External Margins (This creates the "White above and below" look) */
+    /* External Margins (Creates the White space above and below) */
     margin-top: 60px;
     margin-bottom: 60px;
     
     color: white;
+}
+
+.quote-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the content on the screen */
+    display: flex; /* Creates the two-column layout */
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+/* Left Side: Text */
+.quote-content {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 20px;
+}
+
+.quote-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.quote-content .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.process-steps .step {
+    margin-bottom: 25px;
+}
+
+.process-steps h3 {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.process-steps p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.cta-text {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Right Side: Form */
+/* This ensures the form aligns correctly on mobile and desktop */
+#JotFormIFrame-253484024523049 {
+    flex: 1;
+    min-width: 350px;
+    /* Note: If the form itself is white, that is controlled by JotForm settings, not CSS */
+}
+
+/* Responsive adjustments for Mobile */
+@media (max-width: 768px) {
+    .quote-container {
+        flex-direction: column;
+    }
+    
+    .quote-content {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    #JotFormIFrame-253484024523049 {
+        margin: 0 auto;
+        display: block;
+        min-width: 100% !important;
+    }
 }

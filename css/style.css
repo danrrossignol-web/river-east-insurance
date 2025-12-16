@@ -101,19 +101,21 @@ header {
     margin-bottom: 30px;
 }
 
-/* Footer */
+/* --- Footer Styling --- */
+
 footer {
-    position: relative; /* Needed for the overlay to sit correctly */
+    position: relative;
+    /* Keeps your existing background image & overlay look */
     background-image: url('../images/footer-banner.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding: 60px 0;
-    text-align: center;
+    padding: 80px 0 40px 0; /* More padding on top for breathing room */
     z-index: 0;
+    text-align: left; /* CHANGED: Default to left align for the columns */
 }
 
-/* This creates the full-width dark blue overlay */
+/* The Dark Blue Overlay */
 footer::before {
     content: "";
     position: absolute;
@@ -121,79 +123,106 @@ footer::before {
     left: 0; 
     width: 100%; 
     height: 100%;
-    /* Dark blue with 92% opacity (same as quote section) */
-    background: rgba(0, 31, 63, 0.92); 
-    z-index: -1; /* Puts it behind the text but in front of the image */
+    background: rgba(0, 31, 63, 0.95); /* Slightly darker for readability */
+    z-index: -1;
 }
 
-.footer-content {
-    /* We removed the background color here so it doesn't look like a box anymore */
-    padding: 20px;
-    display: inline-block;
+/* 3-Column Grid Layout */
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to stack on mobile */
+    gap: 40px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator line */
 }
 
-/* --- Footer Updates --- */
-
-.footer-content {
-    /* Existing styles */
-    padding: 20px;
-    display: inline-block;
-    max-width: 800px; /* Keeps text from getting too wide */
-    width: 100%;
-}
-
-.footer-logo {
-    height: 50px;
+/* Column Headers */
+.footer-grid h4 {
+    color: #fca311; /* Gold */
+    margin-top: 0;
     margin-bottom: 20px;
-}
-
-.footer-contact p {
-    margin: 5px 0;
     font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.footer-contact a {
-    color: white;
+/* Links List */
+.footer-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-grid ul li {
+    margin-bottom: 12px;
+}
+
+.footer-grid ul li a {
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: 0.3s;
+    font-size: 0.95rem;
 }
 
-.footer-contact a:hover {
-    color: #cbdcf0; /* Light blue on hover */
-    text-decoration: underline;
+.footer-grid ul li a:hover {
+    color: #fca311; /* Turns gold on hover */
+    padding-left: 5px; /* Subtle movement effect */
 }
 
 /* Social Icons */
 .footer-socials {
-    margin: 25px 0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .footer-socials a {
     color: white;
     background: rgba(255, 255, 255, 0.1);
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%; /* Makes them circular circles */
+    border-radius: 50%;
     transition: 0.3s;
 }
 
 .footer-socials a:hover {
-    background: white;
-    color: #001f3f; /* Dark blue icon on white circle */
-    transform: translateY(-3px); /* Slight lift effect */
+    background: #fca311; /* Gold background */
+    color: #001f3f; /* Dark blue icon */
+    transform: translateY(-3px);
 }
 
-/* Legal Section */
-.footer-legal p {
-    margin: 8px 0;
-    font-size: 0.9rem;
-    color: #e0e0e0;
+/* Bottom Legal Section */
+.footer-legal {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+}
+
+.footer-legal a:hover {
+    color: #fca311;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-grid {
+        flex-direction: column; /* Stacks columns vertically */
+        gap: 40px;
+        text-align: center; /* Centers text on mobile for better look */
+    }
+
+    .footer-socials {
+        justify-content: center; /* Centers icons on mobile */
+    }
 }
 
 .licensing {

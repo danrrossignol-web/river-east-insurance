@@ -383,7 +383,7 @@ footer::before {
         
         /* CRITICAL FIX: Disable flex sizing so the height doesn't collapse to 0 */
         flex: none !important; 
-        height: 1800px !important;
+        height: 1600px !important;
     }
 }
 

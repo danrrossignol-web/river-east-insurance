@@ -20,47 +20,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You - River East Insurance</title>
     
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css"> 
 
     <style>
-        /* Internal styles just for this page to keep it simple */
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; color: #333; }
         
         .thank-you-container {
             max-width: 600px;
-            margin: 100px auto;
+            margin: 80px auto; /* Slightly reduced top margin */
             text-align: center;
             padding: 40px 20px;
         }
-        
+
         h1 { color: #001f3f; font-size: 2.5rem; margin-bottom: 20px; }
-        p { font-size: 1.2rem; margin-bottom: 40px; line-height: 1.6; }
         
+        p { font-size: 1.2rem; margin-bottom: 30px; line-height: 1.6; }
+        
+        /* Button Container */
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap; /* Stacks buttons on mobile */
+            margin-bottom: 40px;
+        }
+
+        /* Primary Button (Calendly) */
         .btn {
             background-color: #fca311; /* Gold */
-            color: #001f3f; /* Dark Blue */
+            color: #001f3f;
             padding: 15px 30px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
             font-size: 1.1rem;
             transition: 0.3s;
+            display: inline-block;
+            border: 2px solid #fca311;
         }
-        
-        .btn:hover { background-color: #e09200; }
+        .btn:hover { background-color: #e09200; border-color: #e09200; }
+
+        /* Secondary Button (Home) - outlined style */
+        .btn-outline {
+            background-color: transparent;
+            color: #001f3f;
+            border: 2px solid #001f3f;
+        }
+        .btn-outline:hover {
+            background-color: #001f3f;
+            color: white;
+            border-color: #001f3f;
+        }
+
+        /* Phone Section */
+        .phone-cta {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .phone-link {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #001f3f;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+        .phone-link:hover { color: #fca311; text-decoration: underline; }
+
     </style>
 </head>
 <body>
 
     <div class="thank-you-container">
-        <img src="../images/river-east-insurance-logo-color.png" alt="River East Insurance" style="max-width: 250px; margin-bottom: 30px;">
+        <img src="images/river-east-insurance-logo-color.png" alt="River East Insurance" style="max-width: 250px; margin-bottom: 30px;">
         
         <h1>Request Received!</h1>
-        <p>Thank you for trusting River East Insurance. We are reviewing your information and will be in touch shortly to discuss your quote.</p>
+        <p>Thank you for trusting River East Insurance. We are reviewing your information and will be in touch shortly.</p>
         
-        <a href="/" class="btn">Return to Home</a>
+        <p style="font-weight: bold; margin-bottom: 15px;">Want to skip the wait?</p>
+
+        <div class="action-buttons">
+            <a href="https://calendly.com/YOUR_LINK_HERE" class="btn" target="_blank">Schedule a Meeting</a>
+            
+            <a href="index.html" class="btn btn-outline">Return to Home</a>
+        </div>
+
+        <div class="phone-cta">
+            <p style="margin-bottom: 5px;">Prefer to talk now?</p>
+            <a href="tel:8605550100" class="phone-link">(860) 555-0100</a>
+        </div>
     </div>
 
 </body>

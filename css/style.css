@@ -63,7 +63,8 @@ header {
     background-image: url('../images/hero-image.jpg');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    /* Desktop height */
+    height: 500px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,10 +84,45 @@ header {
     position: relative;
     z-index: 1;
     max-width: 1000px;
+    /* Add padding so text never touches the screen edges */
+    padding: 0 20px; 
 }
 
-.hero h1 { font-size: 3rem; margin-bottom: 10px; }
-.hero p { font-size: 1.5rem; }
+.hero h1 { 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+    line-height: 1.2; /* Better spacing for multi-line headers */
+}
+
+.hero p { 
+    font-size: 1.5rem; 
+}
+
+/* --- MOBILE FIXES --- */
+@media only screen and (max-width: 768px) {
+    .hero {
+        /* Change fixed height to auto so it expands if text wraps */
+        height: auto; 
+        min-height: 300px; /* Ensures it isn't too small */
+        padding: 60px 0; /* Gives breathing room on top/bottom */
+    }
+
+    .hero h1 { 
+        font-size: 1.75rem; /* Reduced from 3rem */
+    }
+
+    .hero p { 
+        font-size: 1rem; /* Reduced from 1.5rem */
+    }
+    
+    /* If there are buttons inside .hero-content, this scales them down */
+    .hero-content .btn, 
+    .hero-content button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+}
 
 /* Sections */
 .container {

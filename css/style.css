@@ -477,3 +477,25 @@ footer::before {
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
+/* --- Carrier Image Updates --- */
+
+.carrier-box {
+    background: white;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden; /* Ensures large images don't spill out */
+    padding: 10px;    /* Adds breathing room around the logo */
+}
+
+.carrier-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Keeps the logo aspect ratio correct */
+    display: block;
+}

@@ -502,3 +502,51 @@ footer::before {
     object-fit: contain; /* Keeps the logo aspect ratio correct */
     display: block;
 }
+
+/* --- Mobile Sticky Action Bar --- */
+.mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    display: none; /* Hidden on desktop */
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+    border-top: 1px solid #eee;
+}
+
+.sticky-btn {
+    flex: 1;
+    margin: 0 10px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.btn-call {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-quote {
+    background-color: #fca311;
+    color: #001f3f;
+}
+
+/* Show only on screens smaller than 768px (Mobile) */
+@media (max-width: 768px) {
+    .mobile-sticky-bar {
+        display: flex;
+    }
+    
+    /* Add padding to footer so the bar doesn't cover content */
+    footer {
+        padding-bottom: 80px; 
+    }
+}

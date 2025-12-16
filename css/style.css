@@ -833,3 +833,71 @@ footer::before {
     font-size: 0.95rem;
     color: #666;
 }
+
+/* --- Dropdown Menu Styling --- */
+
+/* The Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* The "Link" that triggers the dropdown */
+.dropbtn {
+    cursor: pointer;
+    padding-bottom: 20px; /* Extends hover area so menu doesn't disappear */
+}
+
+/* The Hidden Menu Box */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    z-index: 1000;
+    top: 35px; /* Positions it right below the text */
+    left: 0;
+    border-radius: 4px;
+    border-top: 3px solid #fca311; /* Gold accent on top */
+    padding: 10px 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+/* Hover effects for inner links */
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+    color: #001f3f; /* Dark Blue */
+    padding-left: 25px; /* Slight shift effect */
+}
+
+/* Show the menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Tweak: Ensure it doesn't break layout on small screens */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        padding-left: 20px;
+        background: #f9f9f9;
+    }
+}

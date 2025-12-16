@@ -136,84 +136,14 @@ footer::before {
 
 .quote-section {
     position: relative;
-    /* Background image removed. Using solid dark blue. */
     background-color: #001f3f; 
-    padding: 60px 0;
-    color: white;
-}
-
-/* .quote-overlay style removed */
-
-.quote-container {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 0 20px;
-    align-items: flex-start;
-}
-
-/* Left Side: Text */
-.quote-content {
-    flex: 1;
-    min-width: 300px;
-    padding-top: 20px;
-}
-
-.quote-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.quote-content .subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    font-weight: 400;
-}
-
-.process-steps .step {
-    margin-bottom: 25px;
-}
-
-.process-steps h3 {
-    font-size: 1.2rem;
-    margin: 0 0 5px 0;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.process-steps p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #e0e0e0;
-}
-
-.cta-text {
-    margin-top: 30px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* .quote-form-card and .quote-form-card h3 styles removed */
-
-/* Responsive adjustments for Mobile */
-@media (max-width: 768px) {
-    .quote-container {
-        flex-direction: column;
-    }
     
-    .quote-content {
-        text-align: center;
-        margin-bottom: 30px;
-    }
+    /* Internal Padding (Space inside the blue box) */
+    padding: 80px 0; 
 
-    /* Centers the form on mobile */
-    #JotFormIFrame-253484024523049 {
-        margin: 0 auto;
-        display: block;
-    }
+    /* External Margins (This creates the "White above and below" look) */
+    margin-top: 60px;
+    margin-bottom: 60px;
+    
+    color: white;
 }

@@ -117,3 +117,111 @@ footer {
     display: inline-block;
     border-radius: 8px;
 }
+
+/* --- Quote Section Styling --- */
+
+.quote-section {
+    position: relative;
+    /* Uses the footer banner image */
+    background-image: url('../images/footer-banner.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    color: white;
+}
+
+/* The Dark Blue Overlay */
+.quote-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Strong dark blue overlay (90% opacity) to match screenshot */
+    background: rgba(0, 31, 63, 0.92); 
+    z-index: 1;
+}
+
+.quote-container {
+    position: relative;
+    z-index: 2; /* Ensures text sits on top of overlay */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Stacks on mobile */
+    gap: 40px;
+    padding: 0 20px;
+    align-items: flex-start; /* Aligns top of text with top of form */
+}
+
+/* Left Side: Text */
+.quote-content {
+    flex: 1; /* Takes up available space */
+    min-width: 300px;
+    padding-top: 20px;
+}
+
+.quote-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.quote-content .subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.process-steps .step {
+    margin-bottom: 25px;
+}
+
+.process-steps h3 {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.process-steps p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+}
+
+.cta-text {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Right Side: Form Card */
+.quote-form-card {
+    flex: 1;
+    min-width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    color: #333; /* Resets text color for the white card */
+}
+
+.quote-form-card h3 {
+    color: #0056b3; /* Primary Blue for form header */
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive adjustments for Mobile */
+@media (max-width: 768px) {
+    .quote-container {
+        flex-direction: column;
+    }
+    
+    .quote-content {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}

@@ -13,8 +13,13 @@ async function loadComponent(id, file) {
     }
 }
 
-// Load Header and Footer on page load
+// Load Components
 document.addEventListener("DOMContentLoaded", () => {
     loadComponent("header-placeholder", "components/header.html");
     loadComponent("footer-placeholder", "components/footer.html");
+    
+    // This tries to load the quote section. If the page doesn't have the placeholder, it just skips it.
+    if (document.getElementById("quote-placeholder")) {
+        loadComponent("quote-placeholder", "components/quote.html");
+    }
 });

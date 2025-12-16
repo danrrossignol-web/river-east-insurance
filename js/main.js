@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadComponent("footer-placeholder", "components/footer.html");
     
     if (document.getElementById("quote-placeholder")) {
-        // Optional: If you eventually make a components/quote.html
-        // loadComponent("quote-placeholder", "components/quote.html");
+        // Now it will actually load the file:
+        loadComponent("quote-placeholder", "components/quote.html");
     }
 });
 

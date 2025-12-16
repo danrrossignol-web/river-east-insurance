@@ -60,7 +60,7 @@ header {
 
 /* Hero Section */
 .hero {
-    background-image: url('../images/hero-image.png');
+    background-image: url('../images/hero-image.jpg');
     background-size: cover;
     background-position: center;
     height: 500px;

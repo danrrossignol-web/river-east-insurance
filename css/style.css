@@ -577,6 +577,27 @@ footer::before {
     display: block;
 }
 
+/* --- Mobile Carrier Grid Update --- */
+@media (max-width: 768px) {
+    .carrier-grid {
+        display: grid;
+        /* This forces exactly 2 equal columns */
+        grid-template-columns: 1fr 1fr; 
+        gap: 15px; 
+        
+        /* Optional: prevents grid from touching screen edges */
+        padding: 0 10px; 
+    }
+
+    .carrier-box {
+        /* Override the fixed 150px width so they fit the grid */
+        width: 100%; 
+        
+        /* Ensure they stay the same height */
+        height: 80px; 
+    }
+}
+
 /* --- Mobile Sticky Action Bar --- */
 .mobile-sticky-bar {
     position: fixed;

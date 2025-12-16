@@ -132,6 +132,91 @@ footer::before {
     display: inline-block;
 }
 
+/* --- Footer Updates --- */
+
+.footer-content {
+    /* Existing styles */
+    padding: 20px;
+    display: inline-block;
+    max-width: 800px; /* Keeps text from getting too wide */
+    width: 100%;
+}
+
+.footer-logo {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-contact a:hover {
+    color: #cbdcf0; /* Light blue on hover */
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.footer-socials {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes them circular circles */
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    background: white;
+    color: #001f3f; /* Dark blue icon on white circle */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Legal Section */
+.footer-legal p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.licensing {
+    font-weight: 600;
+    color: white !important; /* Stand out more than regular copyright text */
+    margin-bottom: 15px !important;
+}
+
+.marketing-credit {
+    font-size: 0.8rem !important;
+    opacity: 0.8;
+    margin-top: 20px !important;
+}
+
+.marketing-credit a {
+    color: #e0e0e0;
+    text-decoration: underline;
+}
+
+.marketing-credit a:hover {
+    color: white;
+}
+
 /* --- Quote Section Styling --- */
 
 .quote-section {

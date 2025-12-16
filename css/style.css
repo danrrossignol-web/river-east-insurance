@@ -1081,3 +1081,33 @@ footer::before {
     color: white;
     border-color: #001f3f;
 }
+
+/* --- Mobile Padding & Spacing Fixes --- */
+@media (max-width: 768px) {
+    
+    /* 1. Add "Breathing Room" to all standard content containers */
+    .container, 
+    section, 
+    .quote-content, 
+    .check-list {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+
+    /* 2. EXCEPTION: Remove padding from Full-Width Sections 
+       (This prevents the background images from getting cut off) */
+    .hero, 
+    .quote-section, 
+    footer {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* 3. Re-add padding to the CONTENT inside those full-width sections */
+    .hero-content, 
+    .footer-grid, 
+    .quote-container {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+}

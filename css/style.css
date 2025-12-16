@@ -452,3 +452,28 @@ footer::before {
     border-left: 4px solid #fca311;
     margin: 20px 0;
 }
+
+/* --- Updates for Carrier Section --- */
+
+.bg-dark-blue {
+    background-color: #001f3f; /* Dark Blue */
+    color: white;
+}
+
+.bg-dark-blue h3 {
+    color: white !important; /* Overrides default heading color */
+}
+
+/* Updated Carrier Box Style to look good on Dark Blue */
+.carrier-box {
+    background: white; /* White box so logos pop */
+    color: #333; /* Dark text for the placeholder names */
+    width: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

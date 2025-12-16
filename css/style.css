@@ -312,3 +312,143 @@ footer::before {
         min-width: 100% !important;
     }
 }
+
+/* --- New Index Page Styling --- */
+
+/* Helper Classes */
+.bg-light { background-color: #f9f9f9; }
+.section-pad { padding: 60px 0; }
+.center-text { text-align: center; }
+
+/* Hero Button */
+.btn-hero {
+    background-color: #fca311; /* A nice contrasting Gold/Orange for action */
+    color: #001f3f;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 2px solid #fca311;
+}
+
+.btn-hero:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/* Intro Text */
+.intro-text {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    color: #555;
+}
+
+/* Services Grid */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--primary-blue);
+    border-radius: 5px;
+}
+
+.service-card h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.service-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.service-card li:last-child { border-bottom: none; }
+
+/* Area Served Tags */
+.area-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.town-tag {
+    background: #eef4fb;
+    color: var(--primary-blue);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Carrier Grid (Placeholder) */
+.carrier-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    opacity: 0.6;
+}
+
+.carrier-box {
+    background: #ddd;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Contact Grid */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    height: 350px;
+    background: #eee;
+}
+
+.review-highlight {
+    background: #fff9e6; /* Light yellow for reviews */
+    padding: 20px;
+    border-left: 4px solid #fca311;
+    margin: 20px 0;
+}

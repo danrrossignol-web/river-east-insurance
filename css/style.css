@@ -930,3 +930,88 @@ footer::before {
         background: #f9f9f9;
     }
 }
+
+/* --- Carrier Page Styling --- */
+
+.carrier-card-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many cards as possible */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.carrier-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-color: #fca311; /* Highlight border on hover */
+}
+
+/* Carrier Logos */
+.carrier-card img {
+    max-width: 150px;
+    height: 60px; /* Fixed height keeps grid uniform */
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.carrier-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #001f3f;
+}
+
+.carrier-phone {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.carrier-phone:hover {
+    color: #fca311;
+}
+
+/* Container for the Buttons */
+.carrier-links {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+    width: 100%;
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+
+/* The Buttons */
+.btn-carrier {
+    display: block;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.2s;
+    border: 1px solid #ddd;
+}
+
+.btn-carrier:hover {
+    background-color: #001f3f;
+    color: white;
+    border-color: #001f3f;
+}

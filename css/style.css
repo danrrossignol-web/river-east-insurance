@@ -550,3 +550,112 @@ footer::before {
         padding-bottom: 80px; 
     }
 }
+
+/* --- About Page Styling --- */
+
+/* Simple Hero for sub-pages */
+.page-hero {
+    background-color: #001f3f;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-hero h1 { margin: 0 0 10px 0; font-size: 2.5rem; }
+.page-hero p { margin: 0; font-size: 1.2rem; opacity: 0.9; }
+
+/* Team Layout */
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex; /* Creates the Side-by-Side layout */
+    flex-wrap: wrap; /* Stacks on mobile */
+}
+
+.team-photo {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    position: relative;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures photo fills the box without stretching */
+    min-height: 350px;
+}
+
+.team-info {
+    flex: 2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-info h3 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin: 0 0 5px 0;
+}
+
+.team-title {
+    color: #fca311; /* Gold */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+}
+
+.team-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+    border-left: 3px solid #fca311;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.team-bio p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.team-contact {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.team-contact a {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.team-contact a:hover { text-decoration: underline; }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .team-card {
+        flex-direction: column;
+    }
+    .team-photo {
+        max-width: 100%;
+    }
+}

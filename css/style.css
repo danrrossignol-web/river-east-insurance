@@ -464,18 +464,21 @@ footer::before {
     color: white !important; /* Overrides default heading color */
 }
 
-/* Updated Carrier Box Style to look good on Dark Blue */
+/* Updated Carrier Box Style to force them to the front */
 .carrier-box {
-    background: white; /* White box so logos pop */
-    color: #333; /* Dark text for the placeholder names */
+    position: relative; /* Needed for z-index to work */
+    z-index: 10; /* This forces the box to sit "higher" than the background */
+    
+    background: white;
     width: 150px;
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    padding: 10px;
 }
 
 /* --- Carrier Image Updates --- */

@@ -123,3 +123,37 @@ function highlightCurrentPage() {
         }
     });
 }
+
+/* --- Cookie Consent Logic --- */
+document.addEventListener("DOMContentLoaded", () => {
+    checkCookieConsent();
+});
+
+function checkCookieConsent() {
+    // 1. Check if user already accepted
+    if (!localStorage.getItem('cookieConsent')) {
+        
+        // 2. Create the Banner HTML
+        const banner = document.createElement('div');
+        banner.id = 'cookie-banner';
+        banner.innerHTML = `
+            <p>
+                We use cookies to improve your experience and analyze website traffic. 
+                By continuing to use our site, you consent to our 
+                <a href="privacy.html">Privacy Policy</a>.
+            </p>
+            <button id="accept-cookies" class="btn-cookie-accept">I Accept</button>
+        `;
+
+        // 3. Add to the page
+        document.body.appendChild(banner);
+
+        // 4. Listen for Click
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            // Save their choice so the banner doesn't show again
+            localStorage.setItem('cookieConsent', 'true');
+            // Remove banner visually
+            banner.remove();
+        });
+    }
+}

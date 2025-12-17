@@ -1111,3 +1111,65 @@ footer::before {
         padding-right: 25px !important;
     }
 }
+
+/* --- Cookie Consent Banner --- */
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #001f3f; /* Dark Blue */
+    color: white;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    z-index: 10000; /* Ensures it sits on top of everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-top: 3px solid #fca311; /* Gold Accent */
+    animation: slideUp 0.5s ease-out;
+}
+
+#cookie-banner p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+#cookie-banner a {
+    color: #fca311;
+    text-decoration: underline;
+}
+
+.btn-cookie-accept {
+    background-color: #fca311;
+    color: #001f3f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.btn-cookie-accept:hover {
+    background-color: #fff;
+    color: #001f3f;
+}
+
+/* Animation to make it slide up smoothly */
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Mobile Tweak: Stack text and button */
+@media (max-width: 768px) {
+    #cookie-banner {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 30px; /* Space for iPhone home bar */
+    }
+}

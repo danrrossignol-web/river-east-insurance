@@ -140,7 +140,7 @@ function checkCookieConsent() {
             <p>
                 We use cookies to improve your experience and analyze website traffic. 
                 By continuing to use our site, you consent to our 
-                <a href="privacy.html">Privacy Policy</a>.
+                <a href="privacy-policy.html">Privacy Policy</a>.
             </p>
             <button id="accept-cookies" class="btn-cookie-accept">I Accept</button>
         `;

@@ -506,6 +506,7 @@ footer::before {
     min-width: 350px;
     /* Ensure height is recognized on desktop */
     height: 1600px; 
+    scroll-margin-top: 40px;
 }
 
 /* Responsive adjustments for Mobile */

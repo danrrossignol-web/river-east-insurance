@@ -1321,3 +1321,20 @@ footer::before {
         padding-bottom: 30px; /* Space for iPhone home bar */
     }
 }
+
+/* --- Mobile Card Cut-off Fix --- */
+@media (max-width: 768px) {
+    .mobile-fit-fix {
+        width: 100% !important;      /* Forces it to fit the screen width */
+        max-width: 100% !important;  /* Prevents it from growing too wide */
+        min-width: 0 !important;     /* Allows it to shrink if needed */
+        margin-left: 0 !important;   /* Resets any side margins */
+        margin-right: 0 !important;
+        
+        /* Matches your existing mobile padding consistency */
+        padding-left: 25px !important;  
+        padding-right: 25px !important;
+        
+        box-sizing: border-box !important; /* Ensures padding doesn't increase width */
+    }
+}

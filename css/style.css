@@ -1350,3 +1350,11 @@ footer::before {
         white-space: nowrap;             /* Keeps text on one line if possible */
     }
 }
+
+/* Ensure Town Tags look like buttons, not blue links */
+.town-tag {
+    text-decoration: none !important;
+    display: inline-block;
+    /* If the text color changes to blue, force it back to your preferred color: */
+    /* color: #333; */ 
+}

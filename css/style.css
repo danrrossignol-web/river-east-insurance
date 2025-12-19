@@ -41,8 +41,8 @@ header {
 
 /* NAVIGATION AREA */
 nav {
-    margin-left: 40px; 
-    margin-right: auto; /* This pushes the phone number to the right */
+    margin-left: auto; /* PUSHES menu to the right side */
+    margin-right: 40px; /* Adds space between Menu and Phone Number */
 }
 
 .nav-links {
@@ -77,33 +77,68 @@ nav {
     background-color: #003d80;
 }
 
-/* NEW PHONE NUMBER SECTION (Desktop) */
+/* PHONE NUMBER SECTION (Desktop) */
 .header-phone-container {
     text-align: right;
-    line-height: 1.1; /* Tighten line height so label and number sit close */
-    margin-left: 20px; 
+    line-height: 1.1; 
+    /* No margin-left needed here because we used margin-right on the nav above */
 }
 
 .phone-label {
     display: block;
     font-size: 0.7rem;
-    color: #666; /* Grey color for the label so it doesn't compete */
+    color: #666; 
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 .header-phone-number {
-    font-size: 1.8rem; /* Large Size */
-    font-weight: 800;  /* Extra Bold */
-    color: var(--primary-blue); /* Matches Nav Color Exactly */
+    font-size: 1.8rem; 
+    font-weight: 800;  
+    color: var(--primary-blue); 
     text-decoration: none !important;
     display: block;
     transition: 0.3s;
 }
 
 .header-phone-number:hover {
-    color: #fca311; /* Gold on hover */
+    color: #fca311; 
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 1050px) {
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    /* On medium screens, reduce the gap between menu and phone */
+    nav {
+        margin-right: 20px; 
+    }
+
+    .header-phone-number {
+        font-size: 1.4rem; 
+    }
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 850px) {
+    /* Hide phone number on small screens */
+    .header-phone-container {
+        display: none;
+    }
+    
+    /* Reset nav margin so hamburger menu aligns right */
+    nav {
+        margin: 0;
+    }
+    
+    .nav-container {
+        justify-content: space-between; 
+    }
 }
 
 /* --- MOBILE RESPONSIVENESS --- */

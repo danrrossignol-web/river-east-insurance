@@ -1339,3 +1339,14 @@ footer::before {
         box-sizing: border-box !important; /* Ensures padding doesn't increase width */
     }
 }
+
+/* --- Fix for Giant Buttons on Mobile --- */
+@media (max-width: 480px) {
+    .btn-hero {
+        font-size: 1rem !important;      /* Shrinks text from 1.2rem */
+        padding: 12px 20px !important;   /* Shrinks padding from 35px */
+        width: auto !important;          /* Prevents forcing 100% width if not needed */
+        max-width: 100%;                 /* Ensures it never overflows screen */
+        white-space: nowrap;             /* Keeps text on one line if possible */
+    }
+}

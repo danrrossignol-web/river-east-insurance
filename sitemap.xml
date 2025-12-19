@@ -2,35 +2,152 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://www.rivereastinsurance.com/</loc>
-      <lastmod>2025-12-16</lastmod>
+      <lastmod>2025-12-19</lastmod>
       <priority>1.00</priority>
    </url>
    <url>
       <loc>https://www.rivereastinsurance.com/about.html</loc>
+      <lastmod>2025-12-19</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
       <loc>https://www.rivereastinsurance.com/contact.html</loc>
+      <lastmod>2025-12-19</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
       <loc>https://www.rivereastinsurance.com/business-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
       <priority>0.90</priority>
    </url>
    <url>
       <loc>https://www.rivereastinsurance.com/personal-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
       <priority>0.90</priority>
    </url>
    <url>
       <loc>https://www.rivereastinsurance.com/life-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
       <priority>0.90</priority>
    </url>
    <url>
       <loc>https://www.rivereastinsurance.com/our-carriers.html</loc>
+      <lastmod>2025-12-19</lastmod>
       <priority>0.80</priority>
    </url>
    <url>
       <loc>https://www.rivereastinsurance.com/privacy-policy.html</loc>
       <priority>0.50</priority>
+   </url>
+
+   <url>
+      <loc>https://www.rivereastinsurance.com/manchester-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/south-windsor-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/vernon-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/coventry-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/ellington-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/glastonbury-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/west-hartford-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/avon-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/bolton-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/east-windsor-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/newington-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/hebron-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/somers-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/tolland-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/middletown-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/windham-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/columbia-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/colchester-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/mansfield-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/andover-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/willington-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://www.rivereastinsurance.com/granby-connecticut-insurance.html</loc>
+      <lastmod>2025-12-19</lastmod>
+      <priority>0.80</priority>
    </url>
 </urlset>

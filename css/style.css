@@ -1267,11 +1267,13 @@ footer::before {
     bottom: 0;
     left: 0;
     width: 100%;
+    /* Key Fix 1: Includes padding in width calculation so it doesn't overflow */
+    box-sizing: border-box; 
     background-color: #001f3f; /* Dark Blue */
     color: white;
     padding: 20px;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-    z-index: 10000; /* Ensures it sits on top of everything */
+    z-index: 10000; /* Ensures it sits on top */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1308,18 +1310,34 @@ footer::before {
     color: #001f3f;
 }
 
-/* Animation to make it slide up smoothly */
+/* Animation */
 @keyframes slideUp {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
 }
 
-/* Mobile Tweak: Stack text and button */
+/* --- Mobile Fixes --- */
 @media (max-width: 768px) {
     #cookie-banner {
         flex-direction: column;
         text-align: center;
-        padding-bottom: 30px; /* Space for iPhone home bar */
+        /* Key Fix 2: Lift it up so it doesn't hide behind the Sticky Call Bar */
+        bottom: 80px; 
+        /* Key Fix 3: Make it look like a floating card on mobile */
+        width: 90%;
+        left: 5%;
+        border-radius: 8px;
+        padding: 15px;
+        border: 1px solid #fca311; /* Full border looks better on floating card */
+    }
+    
+    #cookie-banner p {
+        font-size: 0.9rem; /* Slightly smaller text for mobile */
+    }
+
+    .btn-cookie-accept {
+        width: 100%; /* Full width button for easier tapping */
+        padding: 12px;
     }
 }
 

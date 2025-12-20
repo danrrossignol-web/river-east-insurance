@@ -21,12 +21,11 @@
     <style>
         /* Specific Styles for Coverage Highlights */
         .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .highlight-card { background: #fff; padding: 25px; border-radius: 8px; border-left: 5px solid #28a745; box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
-        .highlight-card h4 { color: #001f3f; margin-top: 0; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
+        /* Kept cards white for contrast against the new dark background */
+        .highlight-card { background: #fff; padding: 25px; border-radius: 8px; border-left: 5px solid #28a745; box-shadow: 0 3px 10px rgba(0,0,0,0.08); color: #333; }
+        /* Removed flex/gap properties as icons are gone */
+        .highlight-card h4 { color: #001f3f; margin-top: 0; font-size: 1.2rem; margin-bottom: 10px; }
         .highlight-card p { color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0; }
-        
-        /* Icon styling */
-        .icon-box { font-size: 1.5rem; }
     </style>
 
     <script type="application/ld+json">
@@ -101,40 +100,40 @@
         </div>
     </section>
 
-    <section class="bg-light section-pad">
+    <section class="bg-dark-blue section-pad" style="color: white;">
         <div class="container">
-            <h2 class="section-title">The Endorsements That Matter</h2>
-            <p class="center-text" style="margin-bottom: 20px;">We check for these specific coverages on every quote we write.</p>
+            <h2 class="section-title" style="color: white;">The Endorsements That Matter</h2>
+            <p class="center-text" style="margin-bottom: 20px; color: #e0e0e0;">We check for these specific coverages on every quote we write.</p>
             
             <div class="highlight-grid">
                 
                 <div class="highlight-card">
-                    <h4><span class="icon-box">🐭</span> Rodent & Pest Protection</h4>
+                    <h4>Rodent & Pest Protection</h4>
                     <p>Standard policies almost always exclude damage from vermin. But anyone who stores a camper in New England knows mice are a major threat to wiring and upholstery. We find carriers that <strong>include</strong> this protection.</p>
                 </div>
 
                 <div class="highlight-card">
-                    <h4><span class="icon-box">🏚️</span> Roof Replacement</h4>
+                    <h4>Roof Replacement</h4>
                     <p>RV roofs are expensive. Many policies only pay "Actual Cash Value," meaning they depreciate your roof's value based on age. We look for <strong>Replacement Cost</strong> coverage to pay for a new roof, not a prorated check.</p>
                 </div>
 
                 <div class="highlight-card">
-                    <h4><span class="icon-box">🏕️</span> Vacation Liability</h4>
+                    <h4>Vacation Liability</h4>
                     <p>When you park at a campsite, your RV becomes a residence. If a guest trips over your campfire ring or slips on your steps, this coverage protects you from lawsuits—just like your home insurance does.</p>
                 </div>
 
                 <div class="highlight-card">
-                    <h4><span class="icon-box">🧳</span> Personal Effects</h4>
+                    <h4>Personal Effects</h4>
                     <p>You pack a lot of gear: grills, electronics, clothes, and fishing equipment. Personal Effects coverage ensures your belongings are replaced if the camper is broken into or stolen.</p>
                 </div>
 
                 <div class="highlight-card">
-                    <h4><span class="icon-box">🆘</span> Emergency Expense</h4>
+                    <h4>Emergency Expense</h4>
                     <p>If your tow vehicle or motorhome breaks down 100 miles from home, this covers hotel stays and transportation costs so your vacation isn't completely ruined.</p>
                 </div>
 
                 <div class="highlight-card">
-                    <h4><span class="icon-box">☂️</span> Awning Coverage</h4>
+                    <h4>Awning Coverage</h4>
                     <p>Awnings are the first thing to break in a storm. We ensure your policy covers awning replacement without a massive deductible eating up the benefit.</p>
                 </div>
 

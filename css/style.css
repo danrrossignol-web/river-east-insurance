@@ -1358,3 +1358,15 @@ footer::before {
     /* If the text color changes to blue, force it back to your preferred color: */
     /* color: #333; */ 
 }
+
+ul.service-list li a {
+        color: #0056b3; /* Primary Blue */
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+    
+    ul.service-list li a:hover {
+        color: #000000; /* Black on Hover */
+        text-decoration: underline;
+    }

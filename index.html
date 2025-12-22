@@ -16,8 +16,6 @@
     <meta name="description" content="River East Insurance is your local independent insurance agency in Manchester, CT. We shop top carriers for Home, Auto, and Business insurance to find your best coverage.">
     <meta name="keywords" content="Independent Insurance Agency, Insurance Broker, Local Insurance Agent, Manchester CT Insurance, Business Insurance CT, Homeowners Insurance CT, Commercial Auto, Workers Comp">
     
-    <link rel="preload" href="images/hero-image.jpg" as="image">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -118,6 +116,16 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/river-east-insurance-favicon.png">
+    
+    <style>
+        .hero-container { position: relative; width: 100%; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #001f3f; }
+        .hero-bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.4; }
+        .hero-content { position: relative; z-index: 1; text-align: center; color: white; padding: 20px; max-width: 800px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.25rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+        /* Reset default hero style if needed to avoid conflicts */
+        section.hero { background: none !important; } 
+    </style>
 </head>
 <body>
 
@@ -125,7 +133,9 @@
 
     <main>
 
-        <section class="hero">
+        <section class="hero-container">
+            <img src="images/hero-image.jpg" alt="Insurance Agency Manchester CT" class="hero-bg-img" fetchpriority="high">
+            
             <div class="hero-content">
                 <h1>Your Trusted Independent Insurance Agency in Manchester, CT</h1>
                 <p>We work for you, not the insurance companies. Honest advice and tailored solutions for your business and family.</p>
@@ -416,6 +426,7 @@
         <div id="quote-placeholder"></div>
 
     </main>
+
     <footer id="footer-placeholder"></footer>
 
     <script src="js/main.js" defer></script>

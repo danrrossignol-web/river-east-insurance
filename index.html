@@ -16,7 +16,7 @@
     <meta name="description" content="River East Insurance is your local independent insurance agency in Manchester, CT. We shop top carriers for Home, Auto, and Business insurance to find your best coverage.">
     <meta name="keywords" content="Independent Insurance Agency, Insurance Broker, Local Insurance Agent, Manchester CT Insurance, Business Insurance CT, Homeowners Insurance CT, Commercial Auto, Workers Comp">
     
-    <link rel="preload" href="images/hero-image.jpg" as="image">
+    <link rel="preload" href="images/hero-image.jpg" as="image" media="(min-width: 768px)">
 
     <script type="application/ld+json">
     {
@@ -118,6 +118,35 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/river-east-insurance-favicon.png">
+    
+    <style>
+        /* Base Hero Styling (Solid Color Background is default) */
+        .hero-container { position: relative; width: 100%; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #001f3f; }
+        
+        /* Desktop Image Styling */
+        .hero-bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.4; }
+        
+        .hero-content { position: relative; z-index: 1; text-align: center; color: white; padding: 20px; max-width: 800px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.25rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+        
+        section.hero { background: none !important; } 
+
+        /* --- MOBILE PERFORMANCE OVERRIDES --- */
+        /* If screen is smaller than 768px (Mobile) */
+        @media (max-width: 768px) {
+            
+            /* Hide the Hero Image (leaving just the solid #001f3f blue) */
+            .hero-bg-img {
+                display: none !important;
+            }
+
+            /* Hide the Carrier Logos */
+            .carrier-grid {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -125,7 +154,9 @@
 
     <main>
 
-        <section class="hero">
+        <section class="hero-container">
+            <img src="images/hero-image.jpg" alt="Insurance Agency Manchester CT" class="hero-bg-img" fetchpriority="high">
+            
             <div class="hero-content">
                 <h1>Your Trusted Independent Insurance Agency in Manchester, CT</h1>
                 <p>We work for you, not the insurance companies. Honest advice and tailored solutions for your business and family.</p>

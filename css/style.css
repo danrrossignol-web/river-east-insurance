@@ -2,9 +2,9 @@
    1. VARIABLES & GLOBAL RESETS
    ========================================= */
 :root {
-    --primary-blue: #0056b3; /* Main Brand Blue */
-    --dark-blue: #001f3f;    /* Dark Navy */
-    --accent-gold: #fca311;  /* Action Color */
+    --primary-blue: #0056b3;
+    --dark-blue: #001f3f;
+    --accent-gold: #fca311;
     --light-gray: #f4f4f4;
     --dark-text: #333;
     --white: #ffffff;
@@ -44,7 +44,7 @@ ul { list-style: none; padding: 0; }
    2. BUTTONS & LINKS
    ========================================= */
 
-/* Hero Action Button (Gold) */
+/* Hero Action Button */
 .btn-hero {
     background-color: var(--accent-gold);
     color: var(--dark-blue);
@@ -227,7 +227,7 @@ nav {
 }
 
 @media (max-width: 850px) {
-    .header-phone-container { display: none; } /* Hide phone on small screens */
+    .header-phone-container { display: none; }
     nav { margin: 0; }
     .nav-container { justify-content: space-between; }
     
@@ -242,29 +242,39 @@ nav {
 }
 
 /* =========================================
-   4. HERO SECTIONS (Updated for Performance)
+   4. HERO SECTIONS (Optimized)
    ========================================= */
 
-/* Main Homepage Hero - UPDATED SELECTORS */
-.hero-container {
-    position: relative; 
-    width: 100%; 
-    min-height: 500px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    overflow: hidden; 
-    background: var(--dark-blue); 
+/* Main Homepage Hero */
+.hero {
+    /* MOBILE DEFAULT: No image, just blue background for speed */
+    background-color: var(--dark-blue);
+    background-image: none;
+    
+    background-size: cover;
+    background-position: center;
+    height: 500px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
 }
 
-/* This targets the actual IMG tag for desktop */
-.hero-bg-img { 
-    position: absolute; 
-    top: 0; left: 0; 
-    width: 100%; height: 100%; 
-    object-fit: cover; 
-    z-index: 0; 
-    opacity: 0.4; 
+/* DESKTOP OVERRIDE: Load image only on larger screens */
+@media (min-width: 768px) {
+    .hero {
+        background-image: url('../images/hero-image.jpg');
+    }
+    
+    /* Only show the dark overlay if the image is present */
+    .hero::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+    }
 }
 
 .hero-content {
@@ -272,24 +282,22 @@ nav {
     z-index: 1;
     max-width: 1000px;
     padding: 0 20px; 
-    text-align: center; 
-    color: white; 
 }
 
-/* FIX: Updated selectors to match new .hero-container class */
-.hero-container h1 { 
+/* Explicitly styling H1 inside .hero to avoid Deprecation Warning */
+.hero h1 { 
     font-size: 3rem; 
     margin-bottom: 10px; 
     line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.hero-container p { 
-    font-size: 1.5rem; 
+.hero p { 
+    font-size: 1.5rem;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-/* Sub-Page Hero (About, Contact, etc.) */
+/* Sub-Page Hero */
 .page-hero {
     background-color: var(--dark-blue);
     color: white;
@@ -300,7 +308,7 @@ nav {
 .page-hero h1 { margin: 0 0 10px 0; font-size: 2.5rem; }
 .page-hero p { margin: 0; font-size: 1.2rem; opacity: 0.9; }
 
-/* Intro Text Paragraphs */
+/* Intro Text */
 .intro-text {
     font-size: 1.2rem;
     max-width: 900px;
@@ -312,7 +320,7 @@ nav {
    5. HOME PAGE SECTIONS
    ========================================= */
 
-/* Services Grid (Home) */
+/* Services Grid */
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -365,7 +373,7 @@ ul.service-list li a:hover {
     text-decoration: underline;
 }
 
-/* Carrier Grid (Home - Logo display) */
+/* Carrier Grid */
 .carrier-grid {
     display: flex;
     flex-wrap: wrap;
@@ -396,7 +404,7 @@ ul.service-list li a:hover {
     display: block;
 }
 
-/* Area Served (Town Tags & Links) */
+/* Area Served Tags */
 .area-list {
     display: flex;
     flex-wrap: wrap;
@@ -433,7 +441,7 @@ ul.service-list li a:hover {
    6. INNER PAGES (About, Business, Carriers)
    ========================================= */
 
-/* Team Layout (About Page) */
+/* Team Layout */
 .team-grid {
     display: flex;
     flex-direction: column;
@@ -766,22 +774,14 @@ footer::before {
 /* Mobile Phones (Max 768px) */
 @media (max-width: 768px) {
     
-    /* Hero Adjustments - Mobile Performance Hiding */
-    .hero-container {
+    /* Hero Adjustments */
+    .hero {
         height: auto; 
         min-height: 300px;
         padding: 60px 0;
     }
-    
-    /* MOBILE PERF: Hide Background Image on Mobile */
-    .hero-bg-img {
-        display: none !important;
-    }
-
-    /* Font Size Adjustments */
-    .hero-container h1 { font-size: 1.75rem; }
-    .hero-container p { font-size: 1rem; }
-    
+    .hero h1 { font-size: 1.75rem; }
+    .hero p { font-size: 1rem; }
     .hero-content .btn-hero {
         font-size: 0.9rem; padding: 10px 20px; margin-top: 10px;
     }
@@ -791,7 +791,7 @@ footer::before {
         padding-left: 25px !important;
         padding-right: 25px !important;
     }
-    .hero-container, .quote-section, footer {
+    .hero, .quote-section, footer {
         padding-left: 0 !important; padding-right: 0 !important;
     }
     
@@ -820,9 +820,9 @@ footer::before {
         flex: none !important; height: 1600px !important;
     }
 
-    /* Carrier Grid Mobile (2 Columns) - Hiding Images for Perf as per request */
+    /* Carrier Grid Mobile (Hide images on mobile for speed) */
     .carrier-grid {
-        display: none !important; /* Hiding for mobile performance boost */
+        display: none !important; 
     }
 
     /* Cookie Banner Float */

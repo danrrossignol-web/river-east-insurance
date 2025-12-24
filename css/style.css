@@ -2,9 +2,9 @@
    1. VARIABLES & GLOBAL RESETS
    ========================================= */
 :root {
-    --primary-blue: #0056b3; /* Adjust to match exact logo blue */
-    --dark-blue: #001f3f;    /* Dark Navy for footers/heros */
-    --accent-gold: #fca311;  /* Gold/Orange accent */
+    --primary-blue: #0056b3; /* Main Brand Blue */
+    --dark-blue: #001f3f;    /* Dark Navy */
+    --accent-gold: #fca311;  /* Action Color */
     --light-gray: #f4f4f4;
     --dark-text: #333;
     --white: #ffffff;
@@ -44,7 +44,7 @@ ul { list-style: none; padding: 0; }
    2. BUTTONS & LINKS
    ========================================= */
 
-/* Hero Action Button */
+/* Hero Action Button (Gold) */
 .btn-hero {
     background-color: var(--accent-gold);
     color: var(--dark-blue);
@@ -62,7 +62,7 @@ ul { list-style: none; padding: 0; }
     border: 2px solid #fff;
 }
 
-/* Client Portal Button (Header) */
+/* Client Portal / Directions Button */
 .btn-client-portal {
     background-color: var(--primary-blue);
     color: white !important;
@@ -95,7 +95,7 @@ ul { list-style: none; padding: 0; }
     border-color: var(--dark-blue);
 }
 
-/* Text Links */
+/* Inline Text Links */
 .text-link {
     color: var(--primary-blue);
     font-weight: bold;
@@ -151,7 +151,7 @@ nav {
     color: #003d80;
 }
 
-/* Desktop Phone Number in Header */
+/* Header Phone Number */
 .header-phone-container {
     text-align: right;
     line-height: 1.1; 
@@ -179,7 +179,7 @@ nav {
     color: var(--accent-gold); 
 }
 
-/* Dropdown Menu Styling */
+/* Dropdown Menu */
 .dropdown { position: relative; display: inline-block; }
 .dropbtn { cursor: pointer; padding-bottom: 20px; }
 
@@ -242,28 +242,29 @@ nav {
 }
 
 /* =========================================
-   4. HERO SECTIONS
+   4. HERO SECTIONS (Updated for Performance)
    ========================================= */
 
-/* Main Homepage Hero */
-.hero {
-    background-image: url('../images/hero-image.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 500px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
+/* Main Homepage Hero - UPDATED SELECTORS */
+.hero-container {
+    position: relative; 
+    width: 100%; 
+    min-height: 500px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+    background: var(--dark-blue); 
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+/* This targets the actual IMG tag for desktop */
+.hero-bg-img { 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    object-fit: cover; 
+    z-index: 0; 
+    opacity: 0.4; 
 }
 
 .hero-content {
@@ -271,15 +272,22 @@ nav {
     z-index: 1;
     max-width: 1000px;
     padding: 0 20px; 
+    text-align: center; 
+    color: white; 
 }
 
-.hero h1 { 
+/* FIX: Updated selectors to match new .hero-container class */
+.hero-container h1 { 
     font-size: 3rem; 
     margin-bottom: 10px; 
     line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.hero p { font-size: 1.5rem; }
+.hero-container p { 
+    font-size: 1.5rem; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
 /* Sub-Page Hero (About, Contact, etc.) */
 .page-hero {
@@ -758,15 +766,23 @@ footer::before {
 /* Mobile Phones (Max 768px) */
 @media (max-width: 768px) {
     
-    /* Hero Adjustments */
-    .hero {
+    /* Hero Adjustments - Mobile Performance Hiding */
+    .hero-container {
         height: auto; 
         min-height: 300px;
         padding: 60px 0;
     }
-    .hero h1 { font-size: 1.75rem; }
-    .hero p { font-size: 1rem; }
-    .hero-content .btn, .hero-content button {
+    
+    /* MOBILE PERF: Hide Background Image on Mobile */
+    .hero-bg-img {
+        display: none !important;
+    }
+
+    /* Font Size Adjustments */
+    .hero-container h1 { font-size: 1.75rem; }
+    .hero-container p { font-size: 1rem; }
+    
+    .hero-content .btn-hero {
         font-size: 0.9rem; padding: 10px 20px; margin-top: 10px;
     }
 
@@ -775,7 +791,7 @@ footer::before {
         padding-left: 25px !important;
         padding-right: 25px !important;
     }
-    .hero, .quote-section, footer {
+    .hero-container, .quote-section, footer {
         padding-left: 0 !important; padding-right: 0 !important;
     }
     
@@ -804,11 +820,10 @@ footer::before {
         flex: none !important; height: 1600px !important;
     }
 
-    /* Carrier Grid Mobile (2 Columns) */
+    /* Carrier Grid Mobile (2 Columns) - Hiding Images for Perf as per request */
     .carrier-grid {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 10px;
+        display: none !important; /* Hiding for mobile performance boost */
     }
-    .carrier-box { width: 100%; height: 80px; }
 
     /* Cookie Banner Float */
     #cookie-banner {

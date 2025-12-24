@@ -1,6 +1,10 @@
-/* General Resets */
+/* =========================================
+   1. VARIABLES & GLOBAL RESETS
+   ========================================= */
 :root {
     --primary-blue: #0056b3; /* Adjust to match exact logo blue */
+    --dark-blue: #001f3f;    /* Dark Navy for footers/heros */
+    --accent-gold: #fca311;  /* Gold/Orange accent */
     --light-gray: #f4f4f4;
     --dark-text: #333;
     --white: #ffffff;
@@ -16,7 +20,91 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; padding: 0; }
 
-/* Header & Nav */
+/* Global Utilities */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.bg-light { background-color: #f9f9f9; }
+.bg-dark-blue { background-color: var(--dark-blue); color: white; }
+.bg-dark-blue h3 { color: white !important; }
+
+.section-pad { padding: 60px 0; }
+.center-text { text-align: center; }
+
+.section-title {
+    text-align: center;
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   2. BUTTONS & LINKS
+   ========================================= */
+
+/* Hero Action Button */
+.btn-hero {
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 2px solid var(--accent-gold);
+}
+
+.btn-hero:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/* Client Portal Button (Header) */
+.btn-client-portal {
+    background-color: var(--primary-blue);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    white-space: nowrap; 
+}
+
+.btn-client-portal:hover {
+    background-color: #003d80;
+}
+
+/* Standard Carrier Links */
+.btn-carrier {
+    display: block;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.2s;
+    border: 1px solid #ddd;
+}
+
+.btn-carrier:hover {
+    background-color: var(--dark-blue);
+    color: white;
+    border-color: var(--dark-blue);
+}
+
+/* Text Links */
+.text-link {
+    color: var(--primary-blue);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
 header {
     background: var(--white);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -39,10 +127,9 @@ header {
     display: block;
 }
 
-/* NAVIGATION AREA */
 nav {
-    margin-left: auto; /* PUSHES menu to the right side */
-    margin-right: 40px; /* Adds space between Menu and Phone Number */
+    margin-left: auto; /* Pushes menu to the right */
+    margin-right: 40px; /* Space between Menu and Phone */
 }
 
 .nav-links {
@@ -64,24 +151,10 @@ nav {
     color: #003d80;
 }
 
-/* BUTTONS */
-.btn-client-portal {
-    background-color: var(--primary-blue);
-    color: white !important;
-    padding: 10px 20px;
-    border-radius: 5px;
-    white-space: nowrap; 
-}
-
-.btn-client-portal:hover {
-    background-color: #003d80;
-}
-
-/* PHONE NUMBER SECTION (Desktop) */
+/* Desktop Phone Number in Header */
 .header-phone-container {
     text-align: right;
     line-height: 1.1; 
-    /* No margin-left needed here because we used margin-right on the nav above */
 }
 
 .phone-label {
@@ -103,115 +176,80 @@ nav {
 }
 
 .header-phone-number:hover {
-    color: #fca311; 
+    color: var(--accent-gold); 
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 1050px) {
-    .nav-container {
-        padding: 0 15px;
-    }
-    
-    /* On medium screens, reduce the gap between menu and phone */
-    nav {
-        margin-right: 20px; 
-    }
+/* Dropdown Menu Styling */
+.dropdown { position: relative; display: inline-block; }
+.dropbtn { cursor: pointer; padding-bottom: 20px; }
 
-    .header-phone-number {
-        font-size: 1.4rem; 
-    }
-    .nav-links {
-        gap: 15px;
-    }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    z-index: 1000;
+    top: 35px;
+    left: 0;
+    border-radius: 4px;
+    border-top: 3px solid var(--accent-gold);
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.dropdown-content a:last-child { border-bottom: none; }
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+    color: var(--dark-blue);
+    padding-left: 25px;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+/* --- HEADER RESPONSIVENESS --- */
+@media (max-width: 1050px) {
+    .nav-container { padding: 0 15px; }
+    nav { margin-right: 20px; margin-left: 20px; }
+    .header-phone-number { font-size: 1.2rem; }
+    .nav-links { gap: 15px; }
 }
 
 @media (max-width: 850px) {
-    /* Hide phone number on small screens */
-    .header-phone-container {
-        display: none;
-    }
+    .header-phone-container { display: none; } /* Hide phone on small screens */
+    nav { margin: 0; }
+    .nav-container { justify-content: space-between; }
     
-    /* Reset nav margin so hamburger menu aligns right */
-    nav {
-        margin: 0;
-    }
-    
-    .nav-container {
-        justify-content: space-between; 
+    /* Dropdown adjustment for mobile */
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        padding-left: 20px;
+        background: #f9f9f9;
     }
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 1050px) {
-    .nav-container {
-        padding: 0 15px;
-    }
-    nav {
-        margin-left: 20px;
-    }
-    /* Scale down slightly on smaller laptops */
-    .header-phone-number {
-        font-size: 1.4rem; 
-    }
-    .nav-links {
-        gap: 15px;
-    }
-}
+/* =========================================
+   4. HERO SECTIONS
+   ========================================= */
 
-@media (max-width: 850px) {
-    /* Hide the desktop phone number on tablets/phones */
-    .header-phone-container {
-        display: none;
-    }
-    
-    nav {
-        margin: 0;
-    }
-    
-    .nav-container {
-        justify-content: space-between; 
-    }
-}
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 1050px) {
-    /* Tighten spacing on medium screens (Tablets/Small Laptops) */
-    .nav-container {
-        padding: 0 15px;
-    }
-    nav {
-        margin-left: 20px;
-    }
-    .header-phone-number {
-        font-size: 1.2rem;
-    }
-    .nav-links {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 850px) {
-    /* Hide the desktop phone number when it gets too crowded */
-    .header-phone-container {
-        display: none;
-    }
-    
-    /* Reset nav margins so the hamburger menu works correctly */
-    nav {
-        margin: 0;
-    }
-    
-    /* Ensure the hamburger icon stays on the right */
-    .nav-container {
-        justify-content: space-between; 
-    }
-}
-
-/* Hero Section */
+/* Main Homepage Hero */
 .hero {
     background-image: url('../images/hero-image.jpg');
     background-size: cover;
     background-position: center;
-    /* Desktop height */
     height: 500px; 
     display: flex;
     align-items: center;
@@ -225,343 +263,36 @@ nav {
     content: "";
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay to make text pop */
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 1000px;
-    /* Add padding so text never touches the screen edges */
     padding: 0 20px; 
 }
 
 .hero h1 { 
     font-size: 3rem; 
     margin-bottom: 10px; 
-    line-height: 1.2; /* Better spacing for multi-line headers */
+    line-height: 1.2;
 }
 
-.hero p { 
-    font-size: 1.5rem; 
-}
+.hero p { font-size: 1.5rem; }
 
-/* --- MOBILE FIXES --- */
-@media only screen and (max-width: 768px) {
-    .hero {
-        /* Change fixed height to auto so it expands if text wraps */
-        height: auto; 
-        min-height: 300px; /* Ensures it isn't too small */
-        padding: 60px 0; /* Gives breathing room on top/bottom */
-    }
-
-    .hero h1 { 
-        font-size: 1.75rem; /* Reduced from 3rem */
-    }
-
-    .hero p { 
-        font-size: 1rem; /* Reduced from 1.5rem */
-    }
-    
-    /* If there are buttons inside .hero-content, this scales them down */
-    .hero-content .btn, 
-    .hero-content button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-        margin-top: 10px;
-    }
-}
-
-/* Sections */
-.container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.section-title {
+/* Sub-Page Hero (About, Contact, etc.) */
+.page-hero {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 60px 0;
     text-align: center;
-    color: var(--primary-blue);
-    margin-bottom: 30px;
 }
 
-/* --- Footer Styling --- */
+.page-hero h1 { margin: 0 0 10px 0; font-size: 2.5rem; }
+.page-hero p { margin: 0; font-size: 1.2rem; opacity: 0.9; }
 
-footer {
-    position: relative;
-    /* Keeps your existing background image & overlay look */
-    background-image: url('../images/footer-banner.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 80px 0 40px 0; /* More padding on top for breathing room */
-    z-index: 0;
-    text-align: left; /* CHANGED: Default to left align for the columns */
-}
-
-/* The Dark Blue Overlay */
-footer::before {
-    content: "";
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background: rgba(0, 31, 63, 0.95); /* Slightly darker for readability */
-    z-index: -1;
-}
-
-/* 3-Column Grid Layout */
-.footer-grid {
-    display: flex;
-    flex-wrap: wrap; /* Allows columns to stack on mobile */
-    gap: 40px;
-    justify-content: space-between;
-    padding-bottom: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator line */
-}
-
-/* Column Headers */
-.footer-grid h4 {
-    color: #fca311; /* Gold */
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Links List */
-.footer-grid ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-grid ul li {
-    margin-bottom: 12px;
-}
-
-.footer-grid ul li a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 0.95rem;
-}
-
-.footer-grid ul li a:hover {
-    color: #fca311; /* Turns gold on hover */
-    padding-left: 5px; /* Subtle movement effect */
-}
-
-/* Social Icons */
-.footer-socials {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.footer-socials a {
-    color: white;
-    background: rgba(255, 255, 255, 0.1);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.footer-socials a:hover {
-    background: #fca311; /* Gold background */
-    color: #001f3f; /* Dark blue icon */
-    transform: translateY(-3px);
-}
-
-/* Bottom Legal Section */
-.footer-legal {
-    text-align: center;
-    padding-top: 30px;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-legal a {
-    color: rgba(255, 255, 255, 0.8);
-    transition: 0.3s;
-}
-
-.footer-legal a:hover {
-    color: #fca311;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .footer-grid {
-        flex-direction: column; /* Stacks columns vertically */
-        gap: 40px;
-        text-align: center; /* Centers text on mobile for better look */
-    }
-
-    .footer-socials {
-        justify-content: center; /* Centers icons on mobile */
-    }
-}
-
-.licensing {
-    font-weight: 600;
-    color: white !important; /* Stand out more than regular copyright text */
-    margin-bottom: 15px !important;
-}
-
-.marketing-credit {
-    font-size: 0.8rem !important;
-    opacity: 0.8;
-    margin-top: 20px !important;
-}
-
-.marketing-credit a {
-    color: #e0e0e0;
-    text-decoration: underline;
-}
-
-.marketing-credit a:hover {
-    color: white;
-}
-
-/* --- Quote Section Styling --- */
-
-.quote-section {
-    position: relative;
-    background-color: #001f3f; /* Solid Dark Blue */
-    
-    /* Internal Padding (Space inside the blue box) */
-    padding: 80px 0; 
-
-    /* External Margins */
-    margin-top: 60px;
-    margin-bottom: 60px;
-    
-    color: white;
-}
-
-.quote-container {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto; 
-    display: flex; /* Creates the two-column layout */
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 0 20px;
-    align-items: flex-start;
-}
-
-/* Left Side: Text */
-.quote-content {
-    flex: 1;
-    min-width: 300px;
-    padding-top: 20px;
-}
-
-.quote-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.quote-content .subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    font-weight: 400;
-}
-
-.process-steps .step {
-    margin-bottom: 25px;
-}
-
-.process-steps h3 {
-    font-size: 1.2rem;
-    margin: 0 0 5px 0;
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.process-steps p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #e0e0e0;
-}
-
-.cta-text {
-    margin-top: 30px;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-/* Right Side: Form */
-#JotFormIFrame-253484024523049 {
-    flex: 1;
-    min-width: 350px;
-    /* Ensure height is recognized on desktop */
-    height: 1600px; 
-    scroll-margin-top: 40px;
-}
-
-/* Responsive adjustments for Mobile */
-@media (max-width: 768px) {
-    .quote-container {
-        flex-direction: column;
-        align-items: stretch; /* Ensures full width */
-    }
-    
-    .quote-content {
-        text-align: center;
-        margin-bottom: 30px;
-        min-width: auto; /* Allow text to shrink if phone is very narrow */
-    }
-
-    #JotFormIFrame-253484024523049 {
-        margin: 0 auto;
-        display: block;
-        
-        /* FIX: Override the 350px inline style so it fits small phones */
-        min-width: 100% !important; 
-        max-width: 100% !important;
-        
-        /* CRITICAL FIX: Disable flex sizing so the height doesn't collapse to 0 */
-        flex: none !important; 
-        height: 1600px !important;
-    }
-}
-
-/* --- New Index Page Styling --- */
-
-/* Helper Classes */
-.bg-light { background-color: #f9f9f9; }
-.section-pad { padding: 60px 0; }
-.center-text { text-align: center; }
-
-/* Hero Button */
-.btn-hero {
-    background-color: #fca311; /* A nice contrasting Gold/Orange for action */
-    color: #001f3f;
-    padding: 15px 35px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: 0.3s;
-    border: 2px solid #fca311;
-}
-
-.btn-hero:hover {
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-}
-
-/* Intro Text */
+/* Intro Text Paragraphs */
 .intro-text {
     font-size: 1.2rem;
     max-width: 900px;
@@ -569,7 +300,11 @@ footer::before {
     color: #555;
 }
 
-/* Services Grid */
+/* =========================================
+   5. HOME PAGE SECTIONS
+   ========================================= */
+
+/* Services Grid (Home) */
 .services-grid {
     display: flex;
     flex-wrap: wrap;
@@ -609,7 +344,51 @@ footer::before {
 
 .service-card li:last-child { border-bottom: none; }
 
-/* Area Served Tags */
+/* Service Links inside cards */
+ul.service-list li a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+ul.service-list li a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* Carrier Grid (Home - Logo display) */
+.carrier-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.carrier-box {
+    position: relative;
+    z-index: 10; 
+    background: white;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    padding: 10px;
+}
+
+.carrier-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Area Served (Town Tags & Links) */
 .area-list {
     display: flex;
     flex-wrap: wrap;
@@ -626,189 +405,27 @@ footer::before {
     border-radius: 20px;
     font-weight: 600;
     font-size: 0.95rem;
+    text-decoration: none !important;
+    display: inline-block;
 }
 
-/* Carrier Grid */
-.carrier-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 30px;
-    /* REMOVED: opacity: 0.6; */
-}
-
-.carrier-box {
-    background: #ddd;
-    width: 150px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.town-link {
     font-weight: bold;
-    color: #555;
+    color: var(--primary-blue);
+    text-decoration: underline;
+    transition: color 0.2s ease;
 }
 
-/* Contact Grid */
-.contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: center;
-}
-
-.contact-info {
-    flex: 1;
-    min-width: 300px;
-}
-
-.map-container {
-    flex: 1;
-    min-width: 300px;
-    height: 350px;
-    background: #eee;
-}
-
-.review-highlight {
-    background: #fff9e6; /* Light yellow for reviews */
-    padding: 20px;
-    border-left: 4px solid #fca311;
-    margin: 20px 0;
-}
-
-/* --- Updates for Carrier Section --- */
-
-.bg-dark-blue {
-    background-color: #001f3f; /* Dark Blue */
-    color: white;
-}
-
-.bg-dark-blue h3 {
-    color: white !important; /* Overrides default heading color */
-}
-
-/* Updated Carrier Box Style to force them to the front */
-.carrier-box {
-    position: relative; /* Needed for z-index to work */
-    z-index: 10; /* This forces the box to sit "higher" than the background */
-    
-    background: white;
-    width: 150px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    overflow: hidden;
-    padding: 10px;
-}
-
-/* --- Carrier Image Updates --- */
-
-.carrier-box {
-    background: white;
-    width: 150px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    overflow: hidden; /* Ensures large images don't spill out */
-    padding: 10px;    /* Adds breathing room around the logo */
-}
-
-.carrier-box img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Keeps the logo aspect ratio correct */
-    display: block;
-}
-
-/* --- Mobile Carrier Grid Update --- */
-@media (max-width: 768px) {
-    .carrier-grid {
-        display: grid;
-        /* This forces exactly 2 equal columns */
-        grid-template-columns: 1fr 1fr; 
-        gap: 15px; 
-        
-        /* Optional: prevents grid from touching screen edges */
-        padding: 0 10px; 
-    }
-
-    .carrier-box {
-        /* Override the fixed 150px width so they fit the grid */
-        width: 100%; 
-        
-        /* Ensure they stay the same height */
-        height: 80px; 
-    }
-}
-
-/* --- Mobile Sticky Action Bar --- */
-.mobile-sticky-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    display: none; /* Hidden on desktop */
-    justify-content: space-around;
-    padding: 10px 0;
-    z-index: 1000;
-    border-top: 1px solid #eee;
-}
-
-.sticky-btn {
-    flex: 1;
-    margin: 0 10px;
-    padding: 12px;
-    text-align: center;
-    border-radius: 5px;
-    font-weight: bold;
+.town-link:hover {
+    color: #000000;
     text-decoration: none;
-    font-size: 1rem;
 }
 
-.btn-call {
-    background-color: var(--primary-blue);
-    color: white;
-}
+/* =========================================
+   6. INNER PAGES (About, Business, Carriers)
+   ========================================= */
 
-.btn-quote {
-    background-color: #fca311;
-    color: #001f3f;
-}
-
-/* Show only on screens smaller than 768px (Mobile) */
-@media (max-width: 768px) {
-    .mobile-sticky-bar {
-        display: flex;
-    }
-    
-    /* Add padding to footer so the bar doesn't cover content */
-    footer {
-        padding-bottom: 80px; 
-    }
-}
-
-/* --- About Page Styling --- */
-
-/* Simple Hero for sub-pages */
-.page-hero {
-    background-color: #001f3f;
-    color: white;
-    padding: 60px 0;
-    text-align: center;
-}
-
-.page-hero h1 { margin: 0 0 10px 0; font-size: 2.5rem; }
-.page-hero p { margin: 0; font-size: 1.2rem; opacity: 0.9; }
-
-/* Team Layout */
+/* Team Layout (About Page) */
 .team-grid {
     display: flex;
     flex-direction: column;
@@ -822,8 +439,8 @@ footer::before {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    display: flex; /* Creates the Side-by-Side layout */
-    flex-wrap: wrap; /* Stacks on mobile */
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .team-photo {
@@ -836,7 +453,7 @@ footer::before {
 .team-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures photo fills the box without stretching */
+    object-fit: cover;
     min-height: 350px;
 }
 
@@ -848,556 +465,372 @@ footer::before {
     justify-content: center;
 }
 
-.team-info h3 {
-    color: var(--primary-blue);
-    font-size: 2rem;
-    margin: 0 0 5px 0;
-}
-
-.team-title {
-    color: #fca311; /* Gold */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0 0 20px 0;
-}
-
-.team-quote {
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #555;
-    border-left: 3px solid #fca311;
-    padding-left: 15px;
-    margin-bottom: 20px;
-}
-
-.team-bio p {
-    margin-bottom: 15px;
-    line-height: 1.7;
-    color: #333;
-}
+.team-info h3 { color: var(--primary-blue); font-size: 2rem; margin: 0 0 5px 0; }
+.team-title { color: var(--accent-gold); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px 0; }
+.team-quote { font-style: italic; font-size: 1.1rem; color: #555; border-left: 3px solid var(--accent-gold); padding-left: 15px; margin-bottom: 20px; }
+.team-bio p { margin-bottom: 15px; line-height: 1.7; color: #333; }
 
 .team-contact {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;
+    display: flex; flex-direction: column; gap: 10px;
 }
-
-.team-contact a {
-    color: var(--primary-blue);
-    font-weight: 600;
-    text-decoration: none;
-}
-
+.team-contact a { color: var(--primary-blue); font-weight: 600; text-decoration: none; }
 .team-contact a:hover { text-decoration: underline; }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .team-card {
-        flex-direction: column;
-    }
-    .team-photo {
-        max-width: 100%;
-    }
-}
-
-/* --- Contact Page Styling --- */
-
-.contact-cards-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.contact-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    text-align: center;
-    border-top: 4px solid #eee;
-    transition: 0.3s;
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* Highlight the "Talk to Agent" card */
-.highlight-card {
-    border-top: 4px solid #fca311; /* Gold */
-    background: #fffcf5; /* Very light gold tint */
-}
-
-.icon-header {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.contact-card h3 {
-    margin: 0 0 15px 0;
-    color: var(--primary-blue);
-}
-
-.contact-card p {
-    color: #666;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.big-phone-link {
-    display: block;         /* Forces it to sit on its own line */
-    font-size: 2.5rem;      /* INCREASED from 1.5rem to 2.5rem */
-    font-weight: 800;       /* Extra Bold */
-    color: #001f3f;         /* Dark Blue */
-    margin: 15px 0;         /* Adds space above and below */
-    text-decoration: none;
-    line-height: 1.2;
-}
-
-.big-phone-link:hover {
-    color: #fca311;         /* Turns Gold when you hover over it */
-    text-decoration: underline;
-}
-
-.email-link {
-    color: #555;
-    text-decoration: underline;
-}
-
-.hours-box {
-    background: #f4f4f4;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.text-link {
-    color: var(--primary-blue);
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* --- Business Page Styling --- */
-
-/* The Checklist (Checkmarks) */
-.check-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.check-list li {
-    margin-bottom: 15px;
-    padding-left: 25px;
-    position: relative;
-    font-size: 1.05rem;
-    color: #444;
-}
-
-.check-list li::before {
-    content: "✓";
-    color: #fca311; /* Gold Checkmarks */
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
+/* Business Page Checklists */
+.check-list { list-style: none; padding: 0; margin-top: 20px; }
+.check-list li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 1.05rem; color: #444; }
+.check-list li::before { content: "✓"; color: var(--accent-gold); font-weight: bold; position: absolute; left: 0; }
 
 /* Industry Cards */
-.industry-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
+.industry-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
 .industry-card {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    flex: 1;
-    min-width: 280px;
-    max-width: 500px;
-    border-top: 4px solid var(--primary-blue);
-    transition: 0.3s;
+    background: white; padding: 30px; border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); flex: 1;
+    min-width: 280px; max-width: 500px;
+    border-top: 4px solid var(--primary-blue); transition: 0.3s;
 }
-
-.industry-card:hover {
-    transform: translateY(-5px);
-}
-
-.industry-card h3 {
-    margin: 10px 0;
-    color: var(--primary-blue);
-}
-
-.industry-card ul {
-    margin-top: 15px;
-    padding-left: 20px;
-    color: #555;
-}
-
-.industry-card li {
-    margin-bottom: 5px;
-}
+.industry-card:hover { transform: translateY(-5px); }
+.industry-card h3 { margin: 10px 0; color: var(--primary-blue); }
+.industry-card ul { margin-top: 15px; padding-left: 20px; color: #555; }
+.industry-card li { margin-bottom: 5px; }
 
 /* Coverage List Grid */
-.coverage-list-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+.coverage-list-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.coverage-item { background: #f9f9f9; padding: 20px; border-radius: 5px; border-left: 3px solid #ccc; }
+.coverage-item h4 { margin: 0 0 5px 0; color: var(--primary-blue); font-size: 1.1rem; }
+.coverage-item p { margin: 0; font-size: 0.95rem; color: #666; }
 
-.coverage-item {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    border-left: 3px solid #ccc;
-}
-
-.coverage-item h4 {
-    margin: 0 0 5px 0;
-    color: var(--primary-blue);
-    font-size: 1.1rem;
-}
-
-.coverage-item p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #666;
-}
-
-/* --- Dropdown Menu Styling --- */
-
-/* The Container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* The "Link" that triggers the dropdown */
-.dropbtn {
-    cursor: pointer;
-    padding-bottom: 20px; /* Extends hover area so menu doesn't disappear */
-}
-
-/* The Hidden Menu Box */
-.dropdown-content {
-    display: none; /* Hidden by default */
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 220px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
-    z-index: 1000;
-    top: 35px; /* Positions it right below the text */
-    left: 0;
-    border-radius: 4px;
-    border-top: 3px solid #fca311; /* Gold accent on top */
-    padding: 10px 0;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: #333;
-    padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    font-size: 0.95rem;
-    transition: 0.2s;
-    border-bottom: 1px solid #f9f9f9;
-}
-
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-
-/* Hover effects for inner links */
-.dropdown-content a:hover {
-    background-color: #f4f4f4;
-    color: #001f3f; /* Dark Blue */
-    padding-left: 25px; /* Slight shift effect */
-}
-
-/* Show the menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Mobile Tweak: Ensure it doesn't break layout on small screens */
-@media (max-width: 768px) {
-    .dropdown-content {
-        position: static;
-        box-shadow: none;
-        border-top: none;
-        padding-left: 20px;
-        background: #f9f9f9;
-    }
-}
-
-/* --- Carrier Page Styling --- */
-
+/* Carrier Page (Full Cards) */
 .carrier-card-grid {
     display: grid;
-    /* This creates a responsive grid that fits as many cards as possible */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
     padding-top: 20px;
 }
 
 .carrier-card {
-    background: white;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: white; border: 1px solid #eee; border-radius: 8px;
+    padding: 25px; text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s;
+    display: flex; flex-direction: column; align-items: center;
 }
 
 .carrier-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-    border-color: #fca311; /* Highlight border on hover */
+    border-color: var(--accent-gold);
 }
 
-/* Carrier Logos */
-.carrier-card img {
-    max-width: 150px;
-    height: 60px; /* Fixed height keeps grid uniform */
-    object-fit: contain;
-    margin-bottom: 15px;
+.carrier-card img { max-width: 150px; height: 60px; object-fit: contain; margin-bottom: 15px; }
+.carrier-card h3 { margin: 10px 0; font-size: 1.2rem; color: var(--dark-blue); }
+.carrier-phone { display: block; margin-bottom: 20px; font-weight: bold; color: #555; text-decoration: none; font-size: 0.95rem; }
+.carrier-phone:hover { color: var(--accent-gold); }
+
+.carrier-links { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: auto; }
+
+/* =========================================
+   7. CONTACT SECTION & CARDS
+   ========================================= */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
 }
 
-.carrier-card h3 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: #001f3f;
+.contact-info { flex: 1; min-width: 300px; }
+.map-container { flex: 1; min-width: 300px; height: 350px; background: #eee; }
+
+.review-highlight {
+    background: #fff9e6;
+    padding: 20px;
+    border-left: 4px solid var(--accent-gold);
+    margin: 20px 0;
 }
 
-.carrier-phone {
-    display: block;
+/* Contact Page specific cards */
+.contact-cards-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+.contact-card {
+    background: white; padding: 40px 30px; border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); flex: 1;
+    min-width: 300px; max-width: 400px; text-align: center;
+    border-top: 4px solid #eee; transition: 0.3s;
+}
+.contact-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.highlight-card { border-top: 4px solid var(--accent-gold); background: #fffcf5; }
+
+.icon-header { font-size: 2.5rem; margin-bottom: 20px; }
+.contact-card h3 { margin: 0 0 15px 0; color: var(--primary-blue); }
+.contact-card p { color: #666; margin-bottom: 20px; line-height: 1.6; }
+
+.big-phone-link {
+    display: block; font-size: 2.5rem; font-weight: 800;
+    color: var(--dark-blue); margin: 15px 0; text-decoration: none; line-height: 1.2;
+}
+.big-phone-link:hover { color: var(--accent-gold); text-decoration: underline; }
+.email-link { color: #555; text-decoration: underline; }
+.hours-box { background: #f4f4f4; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-size: 0.9rem; color: #333; }
+
+/* =========================================
+   8. QUOTE SECTION (Form)
+   ========================================= */
+.quote-section {
+    position: relative;
+    background-color: var(--dark-blue);
+    padding: 80px 0;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: white;
+}
+
+.quote-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto; 
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+.quote-content { flex: 1; min-width: 300px; padding-top: 20px; }
+.quote-content h2 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 700; }
+.quote-content .subtitle { font-size: 1.3rem; margin-bottom: 30px; font-weight: 400; }
+
+.process-steps .step { margin-bottom: 25px; }
+.process-steps h3 { font-size: 1.2rem; margin: 0 0 5px 0; color: #ffffff; font-weight: 600; }
+.process-steps p { margin: 0; font-size: 0.95rem; color: #e0e0e0; }
+.cta-text { margin-top: 30px; font-weight: bold; font-size: 1.1rem; }
+
+/* Iframe Styling */
+#JotFormIFrame-253484024523049 {
+    flex: 1;
+    min-width: 350px;
+    height: 1600px; 
+    scroll-margin-top: 40px;
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+footer {
+    position: relative;
+    background-image: url('../images/footer-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0 40px 0;
+    z-index: 0;
+    text-align: left;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 31, 63, 0.95);
+    z-index: -1;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-grid h4 {
+    color: var(--accent-gold);
+    margin-top: 0;
     margin-bottom: 20px;
-    font-weight: bold;
-    color: #555;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-grid ul li { margin-bottom: 12px; }
+.footer-grid ul li a {
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+    transition: 0.3s;
     font-size: 0.95rem;
 }
+.footer-grid ul li a:hover { color: var(--accent-gold); padding-left: 5px; }
 
-.carrier-phone:hover {
-    color: #fca311;
-}
-
-/* Container for the Buttons */
-.carrier-links {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px;
-    width: 100%;
-    margin-top: auto; /* Pushes buttons to the bottom */
-}
-
-/* The Buttons */
-.btn-carrier {
-    display: block;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 10px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: 0.2s;
-    border: 1px solid #ddd;
-}
-
-.btn-carrier:hover {
-    background-color: #001f3f;
+.footer-socials { display: flex; gap: 15px; margin-top: 20px; }
+.footer-socials a {
     color: white;
-    border-color: #001f3f;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.footer-socials a:hover {
+    background: var(--accent-gold);
+    color: var(--dark-blue);
+    transform: translateY(-3px);
 }
 
-/* --- Mobile Padding & Spacing Fixes --- */
-@media (max-width: 768px) {
-    
-    /* 1. Add "Breathing Room" to all standard content containers */
-    .container, 
-    section, 
-    .quote-content, 
-    .check-list {
-        padding-left: 25px !important;
-        padding-right: 25px !important;
-    }
-
-    /* 2. EXCEPTION: Remove padding from Full-Width Sections 
-       (This prevents the background images from getting cut off) */
-    .hero, 
-    .quote-section, 
-    footer {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-
-    /* 3. Re-add padding to the CONTENT inside those full-width sections */
-    .hero-content, 
-    .footer-grid, 
-    .quote-container {
-        padding-left: 25px !important;
-        padding-right: 25px !important;
-    }
+.footer-legal {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
 }
+.footer-legal a { color: rgba(255, 255, 255, 0.8); transition: 0.3s; }
+.footer-legal a:hover { color: var(--accent-gold); }
 
-/* --- Cookie Consent Banner --- */
+.licensing { font-weight: 600; color: white !important; margin-bottom: 15px !important; }
+.marketing-credit { font-size: 0.8rem !important; opacity: 0.8; margin-top: 20px !important; }
+.marketing-credit a { color: #e0e0e0; text-decoration: underline; }
+.marketing-credit a:hover { color: white; }
+
+/* =========================================
+   10. COOKIE BANNER & MOBILE STICKY BAR
+   ========================================= */
+
+/* Cookie Banner */
 #cookie-banner {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    /* Key Fix 1: Includes padding in width calculation so it doesn't overflow */
+    bottom: 0; left: 0; width: 100%;
     box-sizing: border-box; 
-    background-color: #001f3f; /* Dark Blue */
+    background-color: var(--dark-blue);
     color: white;
     padding: 20px;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-    z-index: 10000; /* Ensures it sits on top */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 10000;
+    display: flex; justify-content: center; align-items: center;
     gap: 20px;
-    border-top: 3px solid #fca311; /* Gold Accent */
+    border-top: 3px solid var(--accent-gold);
     animation: slideUp 0.5s ease-out;
 }
 
-#cookie-banner p {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-#cookie-banner a {
-    color: #fca311;
-    text-decoration: underline;
-}
+#cookie-banner p { margin: 0; font-size: 0.95rem; line-height: 1.4; }
+#cookie-banner a { color: var(--accent-gold); text-decoration: underline; }
 
 .btn-cookie-accept {
-    background-color: #fca311;
-    color: #001f3f;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: 0.3s;
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+    border: none; padding: 10px 20px;
+    border-radius: 5px; font-weight: bold;
+    cursor: pointer; white-space: nowrap; transition: 0.3s;
 }
+.btn-cookie-accept:hover { background-color: #fff; color: var(--dark-blue); }
 
-.btn-cookie-accept:hover {
-    background-color: #fff;
-    color: #001f3f;
-}
-
-/* Animation */
 @keyframes slideUp {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
 }
 
-/* --- Mobile Fixes --- */
+/* Mobile Sticky Action Bar */
+.mobile-sticky-bar {
+    position: fixed;
+    bottom: 0; left: 0; width: 100%;
+    background: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    display: none; /* Hidden on desktop */
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+    border-top: 1px solid #eee;
+}
+
+.sticky-btn {
+    flex: 1; margin: 0 10px; padding: 12px;
+    text-align: center; border-radius: 5px;
+    font-weight: bold; text-decoration: none; font-size: 1rem;
+}
+.btn-call { background-color: var(--primary-blue); color: white; }
+.btn-quote { background-color: var(--accent-gold); color: var(--dark-blue); }
+
+/* =========================================
+   11. GLOBAL RESPONSIVE & MOBILE FIXES
+   ========================================= */
+
+/* Tablet & Smaller Laptops (Max 1050px) handled in Header section above */
+
+/* Mobile Phones (Max 768px) */
 @media (max-width: 768px) {
-    #cookie-banner {
-        flex-direction: column;
-        text-align: center;
-        /* Key Fix 2: Lift it up so it doesn't hide behind the Sticky Call Bar */
-        bottom: 80px; 
-        /* Key Fix 3: Make it look like a floating card on mobile */
-        width: 90%;
-        left: 5%;
-        border-radius: 8px;
-        padding: 15px;
-        border: 1px solid #fca311; /* Full border looks better on floating card */
+    
+    /* Hero Adjustments */
+    .hero {
+        height: auto; 
+        min-height: 300px;
+        padding: 60px 0;
+    }
+    .hero h1 { font-size: 1.75rem; }
+    .hero p { font-size: 1rem; }
+    .hero-content .btn, .hero-content button {
+        font-size: 0.9rem; padding: 10px 20px; margin-top: 10px;
+    }
+
+    /* Padding & Spacing Fixes */
+    .container, section, .quote-content, .check-list, .hero-content, .footer-grid, .quote-container, .mobile-fit-fix {
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+    }
+    .hero, .quote-section, footer {
+        padding-left: 0 !important; padding-right: 0 !important;
     }
     
-    #cookie-banner p {
-        font-size: 0.9rem; /* Slightly smaller text for mobile */
-    }
-
-    .btn-cookie-accept {
-        width: 100%; /* Full width button for easier tapping */
-        padding: 12px;
-    }
-}
-
-/* --- Mobile Card Cut-off Fix --- */
-@media (max-width: 768px) {
+    /* Mobile Fit Utilities */
     .mobile-fit-fix {
-        width: 100% !important;      /* Forces it to fit the screen width */
-        max-width: 100% !important;  /* Prevents it from growing too wide */
-        min-width: 0 !important;     /* Allows it to shrink if needed */
-        margin-left: 0 !important;   /* Resets any side margins */
-        margin-right: 0 !important;
-        
-        /* Matches your existing mobile padding consistency */
-        padding-left: 25px !important;  
-        padding-right: 25px !important;
-        
-        box-sizing: border-box !important; /* Ensures padding doesn't increase width */
+        width: 100% !important; max-width: 100% !important;
+        min-width: 0 !important; margin-left: 0 !important; margin-right: 0 !important;
+        box-sizing: border-box !important;
     }
+
+    /* Team Card Stacking */
+    .team-card { flex-direction: column; }
+    .team-photo { max-width: 100%; }
+
+    /* Footer Stacking */
+    .footer-grid { flex-direction: column; gap: 40px; text-align: center; }
+    .footer-socials { justify-content: center; }
+    footer { padding-bottom: 80px; /* Space for sticky bar */ }
+
+    /* Quote Form Mobile Fix */
+    .quote-container { flex-direction: column; align-items: stretch; }
+    .quote-content { text-align: center; margin-bottom: 30px; min-width: auto; }
+    #JotFormIFrame-253484024523049 {
+        margin: 0 auto; display: block;
+        min-width: 100% !important; max-width: 100% !important;
+        flex: none !important; height: 1600px !important;
+    }
+
+    /* Carrier Grid Mobile (2 Columns) */
+    .carrier-grid {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 10px;
+    }
+    .carrier-box { width: 100%; height: 80px; }
+
+    /* Cookie Banner Float */
+    #cookie-banner {
+        flex-direction: column; text-align: center;
+        bottom: 80px; /* Above sticky bar */
+        width: 90%; left: 5%;
+        border-radius: 8px; padding: 15px;
+        border: 1px solid var(--accent-gold);
+    }
+    .btn-cookie-accept { width: 100%; padding: 12px; }
+
+    /* Show Sticky Bar */
+    .mobile-sticky-bar { display: flex; }
 }
 
-/* --- Fix for Giant Buttons on Mobile --- */
+/* Very Small Screens (Max 480px) */
 @media (max-width: 480px) {
     .btn-hero {
-        font-size: 1rem !important;      /* Shrinks text from 1.2rem */
-        padding: 12px 20px !important;   /* Shrinks padding from 35px */
-        width: auto !important;          /* Prevents forcing 100% width if not needed */
-        max-width: 100%;                 /* Ensures it never overflows screen */
-        white-space: nowrap;             /* Keeps text on one line if possible */
+        font-size: 1rem !important;
+        padding: 12px 20px !important;
+        width: auto !important;
+        max-width: 100%;
+        white-space: nowrap;
     }
-}
-
-/* Ensure Town Tags look like buttons, not blue links */
-.town-tag {
-    text-decoration: none !important;
-    display: inline-block;
-    /* If the text color changes to blue, force it back to your preferred color: */
-    /* color: #333; */ 
-}
-
-ul.service-list li a {
-        color: #0056b3; /* Primary Blue */
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.2s ease;
-    }
-    
-    ul.service-list li a:hover {
-        color: #000000; /* Black on Hover */
-        text-decoration: underline;
-    }
-
-/* Styling for Town Links in Service Area Section */
-.town-link {
-    font-weight: bold;      /* Strong Text */
-    color: #0056b3;         /* Hyperlink Blue */
-    text-decoration: underline;
-    transition: color 0.2s ease;
-}
-
-.town-link:hover {
-    color: #000000;         /* Black on Hover */
-    text-decoration: none;  /* Optional: removes underline on hover for cleaner look */
 }

@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CCPZ888JRT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CCPZ888JRT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-CCPZ888JRT');
-</script>
+      // 1. Google Analytics
+      gtag('config', 'G-CCPZ888JRT');
+
+      // 2. Google Ads Global Tag
+      gtag('config', 'AW-448278069');
+
+      // 3. Google Ads Phone Call Swapping
+      // This will replace '860.615.9980' with a Google forwarding number for ad clicks
+      gtag('config', 'AW-448278069/eYtpCJDon7caELXc4NUB', {
+        'phone_conversion_number': '860.615.9980'
+      });
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Center | File a Claim & Pay Bills | River East Insurance</title>

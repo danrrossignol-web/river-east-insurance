@@ -2,18 +2,27 @@
 <html lang="en">
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CCPZ888JRT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      gtag('config', 'G-CCPZ888JRT'); // Your Analytics
-      gtag('config', 'AW-448278069'); // Your Google Ads (Added)
-    </script>
+  // 1. Google Analytics
+  gtag('config', 'G-CCPZ888JRT');
 
-    <script>
-      gtag('event', 'conversion', {'send_to': 'AW-448278069/f_YQCM-5rfABELXc4NUB'});
-    </script>
+  // 2. Google Ads Global Tag
+  gtag('config', 'AW-448278069');
+
+  // 3. Google Ads Phone Call Swapping (Global)
+  // Matches "860.615.9980" exactly to swap it if they decide to call after submitting
+  gtag('config', 'AW-448278069/eYtpCJDon7caELXc4NUB', {
+    'phone_conversion_number': '860.615.9980'
+  });
+</script>
+
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-448278069/f_YQCM-5rfABELXc4NUB'});
+</script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

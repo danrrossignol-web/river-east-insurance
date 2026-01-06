@@ -42,6 +42,9 @@ jobs:
           contact-connecticuts-best-insurance-agents.html
           our-team.html
           personal-insurance-products.html
+          claims.html
+          commercial-umbrella-excess-liability-insurance.html
+          recreational-vehicle-insurance-boat-insurance.html
 
     - name: Commit and push
       uses: EndBug/add-and-commit@v9

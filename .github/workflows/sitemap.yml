@@ -2,9 +2,9 @@ name: Generate Sitemap
 
 on:
   push:
-    branches: [ main, master ]  # Runs on pushes to main or master
+    branches: [ main, master ]
     paths:
-      - '**.html' # Only runs if you add/change HTML files
+      - '**.html'
 
 permissions:
   contents: write
@@ -25,13 +25,26 @@ jobs:
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: https://www.rivereastinsurance.com/
-        drop-html-extension: false # Keeps the .html extension to match your current URLs
-        include-date: true # Updates the lastmod date automatically
-        # VVV THIS IS THE NEW LINE VVV
-        exclude-paths: components # Tells the bot to ignore the "components" folder
+        drop-html-extension: false 
+        include-date: true 
+        
+        # EXCLUSION LIST UPDATED BELOW
+        # This blocks the folder 'components' and every specific file you listed.
+        exclude-paths: >
+          components
+          404.html
+          referrals.html
+          thank-you-for-your-insurance-request.html
+          connecticut-business-bonds.html
+          connecticut-commercial-business-insurance-agency.html
+          connecticut-personal-homeowners-insurance.html
+          connecticut-term-life-insurance-agency.html
+          contact-connecticuts-best-insurance-agents.html
+          our-team.html
+          personal-insurance-products.html
 
     - name: Commit and push
       uses: EndBug/add-and-commit@v9
       with:
-        message: 'Automated sitemap update'
+        message: 'Automated sitemap update - excluded redirects and utility pages'
         add: 'sitemap.xml'

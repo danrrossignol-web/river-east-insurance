@@ -27,6 +27,8 @@ jobs:
         base-url-path: https://www.rivereastinsurance.com/
         drop-html-extension: false # Keeps the .html extension to match your current URLs
         include-date: true # Updates the lastmod date automatically
+        # VVV THIS IS THE NEW LINE VVV
+        exclude-paths: components # Tells the bot to ignore the "components" folder
 
     - name: Commit and push
       uses: EndBug/add-and-commit@v9

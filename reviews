@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CCPZ888JRT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // 1. Google Analytics
+      gtag('config', 'G-CCPZ888JRT');
+
+      // 2. Google Ads Global Tag
+      gtag('config', 'AW-448278069');
+
+      // 3. Google Ads Phone Call Swapping
+      gtag('config', 'AW-448278069/eYtpCJDon7caELXc4NUB', {
+        'phone_conversion_number': '860.615.9980'
+      });
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Reviews | River East Insurance Manchester CT</title>
+    <meta name="description" content="Read what our clients say about River East Insurance. We pride ourselves on honest advice and excellent service for Manchester, CT businesses and families.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/river-east-insurance-favicon.png">
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2078428462916124');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2078428462916124&ev=PageView&noscript=1"
+    /></noscript>
+    <style>
+        .review-intro {
+            text-align: center; 
+            max-width: 800px; 
+            margin: 0 auto 40px auto;
+        }
+        .review-widget-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            min-height: 600px; /* Prevents layout shift while widget loads */
+        }
+        /* Mobile adjustment for widget padding */
+        @media (max-width: 600px) {
+            .review-widget-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header-placeholder"></header>
+
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our Reputation is Everything.</h1>
+                <p>We don't work for a big corporation; we work for our neighbors. See what families and business owners in Manchester have to say about working with us.</p>
+            </div>
+        </section>
+
+        <section class="container section-pad">
+            <div class="review-intro">
+                <h2 class="section-title">Real Feedback from Real Clients</h2>
+                <p class="intro-text">
+                    We believe transparency builds trust. We are proud of our 5-star reputation because it was earned one phone call, one policy review, and one claim at a time.
+                </p>
+            </div>
+
+            <div class="review-widget-container">
+                <div data-embed-placeholder="22267">
+                    <script defer src="https://www.local-marketing-reports.com/external/showcase-reviews/embed/46696caf3bee41b619be16bb761dea0c8ac79ef9?id=22267"></script>
+                </div>
+                </div>
+        </section>
+
+        <section class="bg-light section-pad" style="text-align: center;">
+            <div class="container">
+                <h2 class="section-title">Are You a Happy Client?</h2>
+                <p style="max-width: 600px; margin: 0 auto 30px auto; font-size: 1.1rem; color: #555;">
+                    The greatest compliment you can give us is sharing your experience. If we helped you save money or understand your coverage better, please let us know!
+                </p>
+                <a href="https://g.page/r/CdBzFm4I_T7iEBM/review" target="_blank" class="btn-hero" style="background-color: #001f3f;">Leave Us a Google Review</a>
+            </div>
+        </section>
+
+        <div id="quote-placeholder"></div>
+
+    </main>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script src="js/main.js" defer></script>
+    
+    <div class="mobile-sticky-bar">
+        <a href="tel:8606159980" class="sticky-btn btn-call">📞 Call Us</a>
+        <a href="#JotFormIFrame-253484024523049" class="sticky-btn btn-quote">Get a Quote</a>
+    </div>
+
+</body>
+</html>

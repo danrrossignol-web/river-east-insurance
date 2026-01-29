@@ -183,15 +183,23 @@ src="https://www.facebook.com/tr?id=2078428462916124&ev=PageView&noscript=1"
                 </p>
             </div>
 
-            <div style="flex: 0 0 auto; text-align: center;">
-                <img src="images/dan-headshot.jpg" alt="Dan Rossignol - River East Insurance" 
-                     style="width: 100%; max-width: 250px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 3px solid #fff;">
-                
-                <div style="margin-top: 15px;">
-                    <strong style="display: block; color: #001f3f; font-size: 1.1rem;">Dan Rossignol</strong>
-                    <span style="color: #fca311; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Agency Principal</span>
-                </div>
-            </div>
+            <link rel="preload" href="images/hero-image.jpg" as="image" fetchpriority="high">
+
+<div style="flex: 0 0 auto; text-align: center;">
+    <img src="images/dan-headshot-small.jpg" 
+         srcset="images/dan-headshot-small.jpg 500w, images/dan-headshot.jpg 1000w"
+         sizes="(max-width: 600px) 250px, 500px"
+         alt="Dan Rossignol - River East Insurance" 
+         width="250" 
+         height="350"
+         loading="lazy"
+         style="width: 100%; max-width: 250px; height: auto; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 3px solid #fff;">
+    
+    <div style="margin-top: 15px;">
+        <strong style="display: block; color: #001f3f; font-size: 1.1rem;">Dan Rossignol</strong>
+        <span style="color: #fca311; font-size: 0.9rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Agency Principal</span>
+    </div>
+</div>
 
         </div>
 

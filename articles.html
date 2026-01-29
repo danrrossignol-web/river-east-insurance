@@ -39,10 +39,12 @@
     fbq('init', '2078428462916124');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
+    <noscript><img height="1" width="1" style="none"
     src="https://www.facebook.com/tr?id=2078428462916124&ev=PageView&noscript=1"
     /></noscript>
+
     <style>
+        /* Article Grid Layout */
         .articles-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -50,6 +52,7 @@
             margin-top: 20px;
         }
 
+        /* Fully Clickable Card Styles */
         .article-card {
             background: #fff;
             border: 1px solid #e0e0e0;
@@ -60,30 +63,37 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            text-decoration: none; /* Critical: removes link underlining */
+            color: inherit; /* Critical: keeps text from turning blue */
         }
 
         .article-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-            border-color: #fca311; /* Brand Gold on hover */
+            border-color: #fca311;
         }
 
+        /* Image Display */
         .article-image-placeholder {
             height: 220px;
-            background-color: #001f3f; /* Fallback Brand Navy */
+            background-color: #001f3f;
             background-size: cover;
             background-position: center;
             position: relative;
+            transition: opacity 0.3s;
+        }
+
+        .article-card:hover .article-image-placeholder {
+            opacity: 0.9;
         }
 
         /* Image Mappings */
+        .img-cyber { background-image: url('images/cyber-security-business.jpg'); }
+        .img-restaurant { background-image: url('images/restaurant-kitchen-safety.jpg'); }
+        .img-workerscomp { background-image: url('images/connecticut-business-team.jpg'); }
+        .img-valuation { background-image: url('images/commercial-property-construction.jpg'); }
         .img-winter { background-image: url('images/river-east-winter-home.jpg'); } 
         .img-levers { background-image: url('images/levers-concept.jpg'); background-color: #444; }
-        .img-risks  { background-image: url('images/home-mechanics.jpg'); }
-        .img-restaurant { background-image: url('images/restaurant-kitchen-safety.jpg'); }
-        .img-valuation { background-image: url('images/commercial-property-construction.jpg'); }
-        .img-workerscomp { background-image: url('images/connecticut-business-team.jpg'); }
-        .img-cyber { background-image: url('images/cyber-security-business.jpg'); }
 
         .article-content {
             padding: 25px;
@@ -94,7 +104,7 @@
 
         .article-category {
             font-size: 0.8rem;
-            color: #fca311; /* Brand Gold */
+            color: #fca311;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -103,7 +113,7 @@
 
         .article-card h3 {
             font-size: 1.3rem;
-            color: #001f3f; /* Brand Navy */
+            color: #001f3f;
             margin: 0 0 15px 0;
             line-height: 1.3;
             font-weight: 700;
@@ -120,19 +130,13 @@
         .read-more-link {
             color: #001f3f;
             font-weight: 700;
-            text-decoration: none;
             display: inline-flex;
             align-items: center;
             transition: color 0.3s;
         }
         
-        .read-more-link:hover {
+        .article-card:hover .read-more-link {
             color: #fca311;
-        }
-        
-        .read-more-link i {
-            margin-left: 5px;
-            font-size: 0.9em;
         }
     </style>
 </head>
@@ -141,7 +145,6 @@
     <header id="header-placeholder"></header>
 
     <main>
-
         <section class="page-hero">
             <div class="container">
                 <h1>Insurance Insights & Articles</h1>
@@ -154,82 +157,70 @@
             <div class="content-block">
                 <h2 class="section-title">Latest Updates</h2>
                 <p class="intro-text" style="text-align: center; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    We believe an educated client is our best client. Here is the straight talk on coverage gaps, rising rates, and how to protect your business and home.
+                    We believe an educated client is our best client. Here is the straight talk on coverage gaps, rising rates, and how to protect your assets.
                 </p>
 
                 <div class="articles-grid">
 
-                    <article class="article-card">
+                    <a href="post/why-cyber-insurance-is-critical-for-your-business.html" class="article-card">
                         <div class="article-image-placeholder img-cyber"></div>
                         <div class="article-content">
                             <div class="article-category">Business Protection</div>
                             <h3>Why Cyber Insurance is Critical for Your Business</h3>
-                            <p class="article-snippet">
-                                Hackers don't just target giant corporations. Discover why small businesses are the #1 target and how to protect your digital assets.
-                            </p>
-                            <a href="post/why-cyber-insurance-is-critical-for-your-business.html" class="read-more-link">Read Full Article &rarr;</a>
+                            <p class="article-snippet">Hackers don't just target giants. Learn why small businesses are the #1 target and how to protect your digital assets.</p>
+                            <span class="read-more-link">Read Full Article &rarr;</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="article-card">
+                    <a href="post/business-income-and-extra-expense-coverage-the-unsung-heroes-of-restaurant-insurance.html" class="article-card">
                         <div class="article-image-placeholder img-restaurant"></div>
                         <div class="article-content">
                             <div class="article-category">Commercial Insurance</div>
-                            <h3>Business Income & Extra Expense: Restaurant Heroes</h3>
-                            <p class="article-snippet">
-                                If your kitchen closes due to a fire, who pays the bills? Learn how to keep your staff paid and your doors reopening faster.
-                            </p>
-                            <a href="post/business-income-and-extra-expense-coverage-the-unsung-heroes-of-restaurant-insurance.html" class="read-more-link">Read Full Article &rarr;</a>
+                            <h3>The Unsung Heroes of Restaurant Insurance</h3>
+                            <p class="article-snippet">If your kitchen closes due to fire or flood, who pays the bills? Discover how BI and Extra Expense coverage keeps you afloat.</p>
+                            <span class="read-more-link">Read Full Article &rarr;</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="article-card">
+                    <a href="post/understanding-workers-compensation-insurance-in-connecticut.html" class="article-card">
                         <div class="article-image-placeholder img-workerscomp"></div>
                         <div class="article-content">
                             <div class="article-category">Compliance</div>
-                            <h3>Understanding Workers' Comp in Connecticut</h3>
-                            <p class="article-snippet">
-                                From Form 6B owner exclusions to surviving the annual premium audit, we break down what every CT employer needs to know.
-                            </p>
-                            <a href="post/understanding-workers-compensation-insurance-in-connecticut.html" class="read-more-link">Read Full Article &rarr;</a>
+                            <h3>Workers' Comp in Connecticut: What You Need to Know</h3>
+                            <p class="article-snippet">From the Form 6B owner exclusion to the annual audit, navigate CT's mandatory coverage with confidence.</p>
+                            <span class="read-more-link">Read Full Article &rarr;</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="article-card">
+                    <a href="post/insuring-commercial-property-to-value.html" class="article-card">
                         <div class="article-image-placeholder img-valuation"></div>
                         <div class="article-content">
                             <div class="article-category">Commercial Insurance</div>
                             <h3>Insuring Commercial Property to Value</h3>
-                            <p class="article-snippet">
-                                Market value isn't rebuilding cost. Learn how to avoid co-insurance penalties and ensure your property is fully protected.
-                            </p>
-                            <a href="post/insuring-commercial-property-to-value.html" class="read-more-link">Read Full Article &rarr;</a>
+                            <p class="article-snippet">Market value is not reconstruction cost. Avoid the co-insurance penalty and protect your building investment properly.</p>
+                            <span class="read-more-link">Read Full Article &rarr;</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="article-card">
+                    <a href="post/flash-freeze-alert.html" class="article-card">
                         <div class="article-image-placeholder img-winter"></div>
                         <div class="article-content">
                             <div class="article-category">Winter Safety</div>
                             <h3>Flash Freeze Alert: Protect Your Manchester Home</h3>
-                            <p class="article-snippet">
-                                A rapid temperature drop following rain can wreak havoc. Learn the 5 critical steps to prevent frozen pipes and ice dams tonight.
-                            </p>
-                            <a href="post/flash-freeze-alert.html" class="read-more-link">Read Full Article &rarr;</a>
+                            <p class="article-snippet">When rain turns to ice overnight, your pipes and gutters are at risk. Here are 5 urgent steps to take tonight.</p>
+                            <span class="read-more-link">Read Full Article &rarr;</span>
                         </div>
-                    </article>
+                    </a>
 
-                    <article class="article-card">
+                    <a href="post/pulling-the-wrong-levers-why-cheaper-connecticut-home-insurance-could-cost-you-a-fortune.html" class="article-card">
                         <div class="article-image-placeholder img-levers"></div>
                         <div class="article-content">
                             <div class="article-category">Money & Rates</div>
                             <h3>Why "Cheaper" Insurance Often Costs More</h3>
-                            <p class="article-snippet">
-                                A lower premium usually means stripped-away protection. We expose the "corners" that cut-rate policies often cut.
-                            </p>
-                            <a href="post/pulling-the-wrong-levers-why-cheaper-connecticut-home-insurance-could-cost-you-a-fortune.html" class="read-more-link">Read Full Article &rarr;</a>
+                            <p class="article-snippet">A lower premium usually means vital protection has been stripped away. We expose the corners that cut-rate policies cut.</p>
+                            <span class="read-more-link">Read Full Article &rarr;</span>
                         </div>
-                    </article>
+                    </a>
 
                 </div>
             </div>
@@ -244,7 +235,6 @@
                 <a href="contact.html" class="btn-hero btn-inverse-hover" style="display: block; text-align: center; width: 100%; box-sizing: border-box;">Contact Us Today</a>
             </div>
         </section>
-
     </main>
 
     <footer id="footer-placeholder"></footer>

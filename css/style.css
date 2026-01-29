@@ -849,3 +849,27 @@ footer::before {
         white-space: nowrap;
     }
 }
+
+.article-card {
+    text-decoration: none; /* Removes underline from the whole card */
+    color: inherit; /* Keeps text from turning "link blue" */
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Ensure the "Read More" looks like a link even though it's now a span */
+.read-more-link {
+    color: #001f3f;
+    font-weight: 700;
+}
+
+.article-card:hover .read-more-link {
+    color: #fca311;
+}

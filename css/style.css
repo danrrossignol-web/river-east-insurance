@@ -12,9 +12,11 @@
 
 body {
     margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Added 'font-display: swap' logic via system-ui */
+    font-family: 'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: var(--dark-text);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -435,6 +437,38 @@ ul.service-list li a:hover {
 .town-link:hover {
     color: #000000;
     text-decoration: none;
+}
+
+/* The River East Difference Container */
+.about-flex-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: flex-start; /* Changed from center to prevent vertical jitter */
+    justify-content: center; 
+    gap: 40px; 
+    margin-bottom: 40px;
+    min-height: 400px; /* Reserves space for the majority of the section */
+}
+
+/* Headshot Container - Fixes the 0.178 Layout Shift */
+.headshot-wrapper {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 250px; /* Matches your image width */
+    min-height: 350px; /* Matches your image height */
+    position: relative;
+    background: #f0f0f0; /* Placeholder color while loading */
+    border-radius: 12px;
+}
+
+.headshot-wrapper img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 250 / 350; /* Tells browser the shape before download */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 3px solid #fff;
+    display: block;
 }
 
 /* =========================================
@@ -872,4 +906,16 @@ footer::before {
 
 .article-card:hover .read-more-link {
     color: #fca311;
+}
+
+/* Force browsers to respect HTML width/height attributes for CLS */
+img[width][height] {
+    height: auto; /* Allows the height to scale proportionally */
+}
+
+/* Specific fix for the logo to prevent header jumping */
+.logo img {
+    width: 240px; /* Adjust to your actual logo width */
+    height: 60px;
+    aspect-ratio: 4 / 1;
 }

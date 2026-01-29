@@ -1,16 +1,24 @@
 <IfModule mod_expires.c>
   ExpiresActive On
   
-  # Images
+  # Default catch-all (prevents the 10m fallback)
+  ExpiresDefault "access plus 1 month"
+
+  # Images (1 Year - per PageSpeed recommendation)
   ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
 
-  # CSS, JavaScript
+  # CSS and JavaScript (1 Month)
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType text/javascript "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
+
+  # Web Fonts (Optional but helpful for performance)
+  ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>

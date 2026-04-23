@@ -39,7 +39,7 @@
     fbq('init', '2078428462916124');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="none"
+    <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=2078428462916124&ev=PageView&noscript=1"
     /></noscript>
 
@@ -63,8 +63,8 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            text-decoration: none; /* Critical: removes link underlining */
-            color: inherit; /* Critical: keeps text from turning blue */
+            text-decoration: none; 
+            color: inherit; 
         }
 
         .article-card:hover {
@@ -88,6 +88,7 @@
         }
 
         /* Image Mappings */
+        .img-umbrella { background-image: url('images/umbrella-concept.jpg'); background-color: #003366; }
         .img-cyber { background-image: url('images/cyber-security-business.jpg'); }
         .img-restaurant { background-image: url('images/restaurant-kitchen-safety.jpg'); }
         .img-workerscomp { background-image: url('images/connecticut-business-team.jpg'); }
@@ -162,6 +163,15 @@
 
                 <div class="articles-grid">
 
+                    <a href="post/the-personal-umbrella-protecting-your-lifestyle.html" class="article-card">
+                        <div class="article-image-placeholder img-umbrella"></div>
+                        <div class="article-content">
+                            <div class="article-category">Asset Protection</div>
+                            <h3>The Ultimate Safety Net: Why You Need an Umbrella Policy</h3>
+                            <p class="article-snippet">Your home and auto policies have "ceilings." Learn how an umbrella policy protects your net worth and future earnings from major lawsuits.</p>
+                            <span class="read-more-link">Read Full Article &rarr;</span>
+                        </div>
+                    </a>
                     <a href="post/why-cyber-insurance-is-critical-for-your-business.html" class="article-card">
                         <div class="article-image-placeholder img-cyber"></div>
                         <div class="article-content">

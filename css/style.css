@@ -1261,3 +1261,233 @@ footer::before {
         right: 10px;
     }
 }
+/* =========================================
+   NEW SPLIT-LAYOUT HERO SECTION
+   ========================================= */
+
+/* Required Google Fonts (Place at the very top of your CSS file if not already there)
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap');
+*/
+
+.stylized-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #2b6cb0; 
+}
+
+.text-white { color: #ffffff !important; }
+
+.hs-section {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+    color: #1a202c;
+}
+
+.hs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+}
+
+.hs-content {
+    flex: 1.2;
+    min-width: 320px;
+}
+
+.hs-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.hs-eyebrow::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #ed8936;
+}
+
+.hs-hook {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    color: #0f172a;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.hs-seo-h1 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hs-paragraph {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 550px;
+}
+
+.hs-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.hs-btn-primary {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #0f172a;
+}
+
+.hs-btn-primary:hover {
+    background-color: transparent;
+    color: #0f172a;
+}
+
+.hs-btn-link {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.hs-btn-link:hover {
+    color: #2b6cb0;
+    text-decoration: underline;
+}
+
+.hs-divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 30px 0;
+    max-width: 90%;
+}
+
+.hs-trust-box {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.hs-trust-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.hs-sublink {
+    color: #2b6cb0;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hs-sublink:hover {
+    text-decoration: underline;
+}
+
+/* Right Side Image Overlays */
+.hs-image-col {
+    flex: 1;
+    min-width: 320px;
+}
+
+.hs-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hs-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hs-img-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hs-img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 30px 30px 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Bottom Features Bar */
+.hs-features-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.hs-feature {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hs-feature-num {
+    color: #ed8936;
+    font-weight: 700;
+    font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+    .hs-grid { flex-direction: column; }
+    .hs-features-bar { display: grid; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+    .hs-features-bar { grid-template-columns: 1fr; }
+}

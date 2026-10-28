@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap');
+
 /* =========================================
    1. VARIABLES & GLOBAL RESETS
    ========================================= */
@@ -872,4 +874,132 @@ footer::before {
 
 .article-card:hover .read-more-link {
     color: #fca311;
+}
+
+/* =========================================
+   NEW MODERN HERO & TYPOGRAPHY ADDITIONS
+   ========================================= */
+
+.stylized-italic {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    color: #2b6cb0; /* Modern mid-blue */
+}
+
+.modern-section-title {
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.hero-modern {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fcfcfc;
+    min-height: 80vh;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-text-block {
+    flex: 1;
+    min-width: 320px;
+    padding: 60px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-location-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-location-tag::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #2b6cb0;
+}
+
+.hero-visual-hook {
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 1.05;
+    color: #0f172a;
+    margin: 0 0 20px 0;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+/* The SEO H1 - Visually styled as a subheadline but remains an H1 for Google */
+.hero-seo-h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #475569;
+    margin: 0 0 15px 0;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: #334155;
+    max-width: 500px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.btn-hero-modern {
+    background-color: #0f172a; /* Dark Navy */
+    color: #ffffff;
+    padding: 16px 35px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid #0f172a;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-hero-modern:hover {
+    background-color: transparent;
+    color: #0f172a;
+}
+
+.hero-image-block {
+    flex: 1;
+    min-width: 320px;
+    height: 80vh;
+    background-image: url('../images/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+@media (max-width: 900px) {
+    .hero-modern {
+        flex-direction: column;
+    }
+    .hero-text-block {
+        padding: 50px 20px;
+        text-align: left;
+    }
+    .hero-image-block {
+        width: 100%;
+        height: 400px;
+    }
 }

@@ -1482,3 +1482,390 @@ footer::before {
         width: 100%;
     }
 }
+/* =========================================
+   RIVER EAST DIFFERENCE (DARK BLUE)
+   ========================================= */
+.diff-section {
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.diff-header-block {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+}
+
+.diff-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fca311;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.diff-eyebrow::before, .diff-eyebrow::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #fca311;
+}
+
+.diff-title {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1.1;
+    margin: 0 0 25px 0;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.diff-intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.diff-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 50px;
+}
+
+.diff-feature-item {
+    text-align: left;
+}
+
+.diff-icon {
+    color: #fca311;
+    margin-bottom: 15px;
+}
+
+.diff-feature-item h4 {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.diff-feature-item p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =========================================
+   INSURANCE IS PERSONAL (LIGHT)
+   ========================================= */
+.personal-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    font-family: 'Inter', sans-serif;
+}
+
+.personal-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    align-items: center;
+}
+
+.personal-photo-col {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.personal-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+}
+
+.personal-photo-frame::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px; /* Offset to top-left to balance the badge on bottom-right */
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fca311;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.personal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.personal-advisor-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background-color: #0f172a; /* Dark Blue */
+    padding: 15px 30px;
+    z-index: 3;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.badge-eyebrow {
+    display: block;
+    font-size: 0.65rem;
+    color: #fca311;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.badge-name {
+    display: block;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.personal-text-col {
+    flex: 1.2;
+    min-width: 320px;
+}
+
+.personal-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.personal-eyebrow::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 1px;
+    background-color: #fca311;
+}
+
+.personal-title {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin: 0 0 25px 0;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -1px;
+}
+
+.personal-paragraph {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 550px;
+}
+
+.personal-quote-box {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 25px;
+    display: flex;
+    gap: 15px;
+    max-width: 550px;
+}
+
+.quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #fca311;
+    line-height: 0.8;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .personal-grid { flex-direction: column-reverse; gap: 50px; }
+    .personal-photo-frame { margin: 20px auto 0 auto; max-width: 320px; }
+    .personal-advisor-badge { right: 0; }
+}
+/* =========================================
+   UPDATED SERVICES SECTION (MODERN)
+   ========================================= */
+
+.bg-light {
+    background-color: #fcfcfc; /* Off-white to match the modern aesthetic */
+}
+
+.services-header-split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.services-header-left {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.services-title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0;
+    color: #0f172a;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.services-header-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.services-intro {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.services-divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.services-grid-modern {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.service-card-modern {
+    background: #ffffff;
+    padding: 40px;
+    flex: 1;
+    min-width: 320px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(237, 137, 54, 0.1); /* Light orange background */
+    color: #ed8936; /* Orange icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.service-card-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.service-card-title {
+    color: #0f172a;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    letter-spacing: -0.5px;
+}
+
+.service-card-desc {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 25px 0;
+}
+
+.service-card-divider {
+    height: 1px;
+    background-color: #f1f5f9;
+    margin-bottom: 25px;
+}
+
+.service-list-modern {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 0 0 40px 0;
+    flex-grow: 1;
+}
+
+.service-list-modern li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+}
+
+.service-list-modern li::before {
+    content: '✓';
+    color: #ed8936;
+    position: absolute;
+    left: 0;
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.service-list-modern li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.service-list-modern li a:hover {
+    color: #2b6cb0;
+}
+
+.service-card-action {
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .service-list-modern {
+        grid-template-columns: 1fr;
+    }
+}

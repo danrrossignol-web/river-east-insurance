@@ -1567,9 +1567,11 @@ footer::before {
    INSURANCE IS PERSONAL (LIGHT)
    ========================================= */
 .personal-section {
-    padding-top: 90px;
+    margin-top: 0; /* Overrides the default .container margin to tighten the gap */
+    padding-top: 50px; /* Reduced from 90px to pull the content up */
     padding-bottom: 90px;
     font-family: 'Inter', sans-serif;
+    border-top: 1px solid #e2e8f0; /* Adds the crisp, elegant divider line */
 }
 
 .personal-grid {

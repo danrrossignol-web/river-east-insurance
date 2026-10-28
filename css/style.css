@@ -1465,6 +1465,7 @@ footer::before {
     left: 0;
     width: 100%;
     padding: 40px 30px 30px 30px;
+    box-sizing: border-box; /* This keeps the padding inside the 100% width */
     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
     font-size: 1.5rem;
     line-height: 1.2;

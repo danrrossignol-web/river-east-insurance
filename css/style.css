@@ -1926,3 +1926,42 @@ footer::before {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================
+   12. MOBILE OVERFLOW & PADDING FIXES
+   ========================================= */
+/* Ensure modern components calculate padding internally so they don't break page width */
+.service-card-modern, .hs-image-col, .hs-img-overlay, .photo-frame, .industry-box, .container {
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+    /* 1. Fix Double-Padding: Remove forced left/right padding on sections so only the container handles it */
+    section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+    }
+
+    /* 2. Force cards to fit safely inside the mobile screen */
+    .service-card-modern {
+        min-width: 100% !important;
+        padding: 25px !important; /* Shrink from 40px desktop padding to save space on mobile */
+    }
+    
+    /* 3. Fix Hero Image and Difference Image bleeding off screen */
+    .hs-image-col, .difference-photo-wrapper, .personal-photo-col {
+        min-width: 100% !important;
+        padding-right: 0 !important; /* Removes the desktop offset padding that breaks mobile */
+    }
+    
+    .hs-image-wrapper, .photo-frame {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
